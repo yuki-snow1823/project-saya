@@ -1,3 +1,3 @@
 class CounterSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :counter
 end
