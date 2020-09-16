@@ -33,7 +33,7 @@
     created() {
       let vm = this
       console.log("hage")
-      axios.put("/v1/counter").then(response => {
+      axios.get("/v1/counter").then(response => {
         vm = response;
         console.log(response.data.test.count);
         this.countSayaBirthday = response.data.test.count;
