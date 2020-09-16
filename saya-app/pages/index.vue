@@ -1,13 +1,17 @@
 <template>
-  <div>
-    <v-btn @click="count()" rounded color="#FFEB3B">
-      <v-btn icon color="#FFC107">
-        <v-icon>mdi-star</v-icon>
-      </v-btn>
-      Happy Birthday Saya
-    </v-btn>
-    <div>沙耶がお祝いされた回数：{{ countSayaBirthday }}</div>
-  </div>
+  <v-container class="bg">
+    <v-row>
+      <v-col class="offset-md-4 offset-lg-4">
+        <v-btn @click="count()" rounded color="#FFEB3B">
+          <v-btn icon color="#FFC107">
+            <v-icon>mdi-star</v-icon>
+          </v-btn>
+          Happy Birthday Saya
+        </v-btn>
+        <p class="test">沙耶がお祝いされた回数：{{ countSayaBirthday }}</p>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -44,3 +48,10 @@
   }
 
 </script>
+
+<style lang="scss">
+  .bg {
+    height: 100vh;
+    background-image: url("~@/assets/testhaikei.jpg");
+  }
+</style>

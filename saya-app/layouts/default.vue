@@ -1,6 +1,6 @@
-<template>
+<template >
 
-      <v-container>
+      <v-container >
         <nuxt />
       </v-container>
 
