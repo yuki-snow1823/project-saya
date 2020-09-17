@@ -1,7 +1,11 @@
 <template>
   <v-app class="bg">
     <nuxt />
+    <v-card>
+      <v-footer absolute>みんなでお祝いしよう</v-footer>
+    </v-card>
   </v-app>
+
 </template>
 
 <script>
@@ -24,6 +28,7 @@
     background-size: cover !important;
     // スマホのサイズで画像の真ん中を参照するように変更したい（サイズそのまま）
   }
+
   v-app {
     background-size: 100%;
   }

@@ -9,24 +9,39 @@
       </v-col>
     </v-row>
 
-
     <v-row>
-      <v-col class="" sm="4" md="2" lg="2">
-        <img src="../assets/saya.png" alt="">
-      </v-col>
-    </v-row>
-
-    <v-row>
-      <v-col md="4">
-        <v-btn @click="count()" rounded color="#FFEB3B">
-          <v-icon>mdi-star</v-icon>Happy Birthday Saya
+      <v-col offset-md="3" md="4">
+        <v-btn class="main-btn" @click="count()" rounded color="#FFEB3B">
+          <v-icon>mdi-star</v-icon>誕生日をお祝いする
         </v-btn>
       </v-col>
     </v-row>
 
     <v-row>
-      <p class="test">沙耶がお祝いされた回数：{{ countSayaBirthday }}</p>
+      <v-col class="count-btn-message" offset-md="3" md="6">
+        <p class="test">沙耶がお祝いされた回数：{{ countSayaBirthday }}</p>
+      </v-col>
     </v-row>
+
+    <v-row>
+      <v-col class="" sm="4" md="2" lg="2">
+        <img height="500px" src="../assets/saya.png" alt="">
+      </v-col>
+
+      <v-col offset-md="2" md="5">
+        <v-card>
+          みんなでお祝いしましょう。<br>
+          みんなでお祝いしましょう。<br>
+          みんなでお祝いしましょう。<br>
+        </v-card>
+      </v-col>
+
+      <v-col class="" md="3">
+        <img height="600px" src="../assets/twitter.jpg" alt="">
+      </v-col>
+    </v-row>
+
+
 
   </v-container>
 </template>
@@ -78,7 +93,16 @@
   .top-message {
     font-size: 100px;
     background-color: white;
-
   }
 
+.main-btn {
+    padding: 60px !important;
+    font-size: 30px !important;
+  }
+
+  .count-btn-message {
+    background-color: white;
+    padding: 30px;
+    font-size: 30px;
+  }
 </style>
