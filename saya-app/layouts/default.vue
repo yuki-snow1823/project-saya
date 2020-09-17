@@ -1,6 +1,6 @@
-<template >
+<template>
 
-      <v-container >
+      <v-container>
         <nuxt />
       </v-container>
 
@@ -13,8 +13,21 @@ export default {
       
     }
   },
+    head: {
+    bodyAttrs: {
+      class: 'bg'
+    }
+  },
   created() {
       console.log("API_ENDPOINT:", process.env.API_ENDPOINT);
   },
 }
 </script>
+
+<style lang="scss">
+  .bg {
+    background-image: url("~@/assets/testhaikei.jpg");
+    background-size: 100%;
+
+  }
+</style>

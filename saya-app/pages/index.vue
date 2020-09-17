@@ -1,7 +1,9 @@
 <template>
-  <v-container class="bg">
-    <v-row>
-      <v-col class="offset-md-4 offset-lg-4">
+  <v-container>
+    <v-row class="mb-6" >
+      <v-spacer></v-spacer>
+      <v-col md="3" offset="5" >test</v-col>
+      <v-col md="3">
         <v-btn @click="count()" rounded color="#FFEB3B">
           <v-btn icon color="#FFC107">
             <v-icon>mdi-star</v-icon>
@@ -50,8 +52,4 @@
 </script>
 
 <style lang="scss">
-  .bg {
-    height: 100vh;
-    background-image: url("~@/assets/testhaikei.jpg");
-  }
 </style>
