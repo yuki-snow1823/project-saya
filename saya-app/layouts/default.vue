@@ -2,7 +2,7 @@
   <v-app class="bg">
     <nuxt />
     <v-card>
-      <v-footer absolute>みんなでお祝いしよう</v-footer>
+      <v-footer absolute>みんなでハッシュタグのツイートをつけてお祝いしよう。</v-footer>
     </v-card>
   </v-app>
 
