@@ -1,9 +1,11 @@
 <template>
   <v-container>
     <v-row>
-      <v-col class="day" md="1">10/21</v-col>
-      <v-col class="top-message" offset-md="1" md="10">
-        <p>
+      <v-col md="2">
+        <img src="../assets/仮素材_日付.gif" alt="">
+      </v-col>
+      <v-col offset-md="2" md="6">
+        <p class="top-message">
           Happy Birthday Saya!
         </p>
       </v-col>
@@ -11,17 +13,31 @@
 
 
     <v-row class="main-contents">
+
       <v-col class="" sm="4" md="2" lg="2">
         <img height="500px" src="../assets/saya.png" alt="">
       </v-col>
 
       <v-col offset-md="2" md="5">
-        <v-card class="message-card mb-5">
-          みんなでお祝いしましょう。<br>
-          みんなでお祝いしましょう。<br>
-          みんなでお祝いしましょう。<br>
-          みんなでお祝いしましょう。<br>
-          みんなでお祝いしましょう。<br>
+        <v-card class="mx-auto" outlined>
+          <v-list-item three-line>
+            <v-list-item-content>
+              <div class="overline mb-4">#朱鷺戸沙耶生誕祭2020</div>
+              <v-list-item-title class="headline mb-1">沙耶さん！おめでとう！</v-list-item-title>
+              <v-list-item-subtitle class="my-3">
+                ここにお祝いメッセージが入ります。<br>
+                ここにお祝いメッセージが入ります。<br>
+              </v-list-item-subtitle>
+            </v-list-item-content>
+
+            <v-list-item-avatar tile size="80">
+              <img src="../assets/mini_saya.jpg" alt="">
+            </v-list-item-avatar>
+          </v-list-item>
+
+          <!-- <v-card-actions>
+            <v-btn text></v-btn>
+          </v-card-actions> -->
         </v-card>
 
         <v-col class="d-flex">
@@ -37,6 +53,12 @@
 
       <v-col class="" md="3">
         <img height="600px" src="../assets/twitter.jpg" alt="">
+      </v-col>
+
+      <v-col>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="【ページのURL】" data-text="【ツイート本文】"
+          data-via="【ユーザ名】" data-size="【ボタンのサイズ】" data-related="【ユーザ名】" data-count="【カウント表示の種類】"
+          data-hashtags="【ハッシュタグ】">Tweet</a>
       </v-col>
     </v-row>
 
@@ -90,10 +112,12 @@
 
   .main-contents {
     margin-bottom: 40px;
+    margin-top: -40px;
   }
 
   .top-message {
-    font-size: 100px;
+    font-size: 60px;
+    margin-top: 120px;
     background-color: white;
   }
 
