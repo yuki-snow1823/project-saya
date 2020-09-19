@@ -40,6 +40,8 @@
           </v-card-actions> -->
         </v-card>
 
+        <v-text-field label="Outlined" outlined></v-text-field>
+
         <v-col class="d-flex">
           <v-btn class="main-btn" @click="count()" rounded color="#FFEB3B">
             <v-icon>mdi-star</v-icon>誕生日をお祝いする
@@ -52,13 +54,17 @@
       </v-col>
 
       <v-col class="" md="3">
-        <img height="600px" src="../assets/twitter.jpg" alt="">
+        <a class="twitter-timeline" data-width="300" data-height="600" data-theme="light"
+          href="https://twitter.com/yuki82511988?ref_src=twsrc%5Etfw">Tweets by yuki82511988</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </v-col>
 
       <v-col>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="【ページのURL】" data-text="【ツイート本文】"
-          data-via="【ユーザ名】" data-size="【ボタンのサイズ】" data-related="【ユーザ名】" data-count="【カウント表示の種類】"
-          data-hashtags="【ハッシュタグ】">Tweet</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="ここの値をフォームにしたい">Tweet</a>
+      </v-col>
+
+      <v-col>
+
       </v-col>
     </v-row>
 
@@ -72,7 +78,8 @@
   export default {
     data() {
       return {
-        countSayaBirthday: 0
+        countSayaBirthday: 0,
+        text: "#朱鷺戸沙耶生誕祭2020"
       }
     },
     methods: {
@@ -98,6 +105,21 @@
     },
     components: {}
   }
+
+</script>
+// <script>
+  //   ! function (d, s, id) {
+  //     var js, fjs = d.getElementsByTagName(s)[0],
+  //       p = /^http:/.test(d.location) ? 'http' : 'https';
+  //     if (!d.getElementById(id)) {
+  //       js = d.createElement(s);
+  //       js.id = id;
+  //       js.src = p + '://platform.twitter.com/widgets.js';
+  //       fjs.parentNode.insertBefore(js, fjs);
+  //     }
+  //   }(document, 'script', 'twitter-wjs');
+
+  // 
 
 </script>
 
