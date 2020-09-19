@@ -40,11 +40,12 @@
           </v-card-actions> -->
         </v-card>
 
-        <v-text-field label="Outlined" outlined></v-text-field>
+        <v-textarea background-color="amber lighten-4" color="orange orange-darken-5" label="お祝いメッセージを入力する">
+        </v-textarea>
 
         <v-col class="d-flex">
-          <v-btn class="main-btn" @click="count()" rounded color="#FFEB3B">
-            <v-icon>mdi-star</v-icon>誕生日をお祝いする
+          <v-btn class="main-btn" @click="count()" rounded color="#1fffff">
+            <v-icon color="orange orange-darken-5">mdi-star</v-icon>誕生日をお祝いする
           </v-btn>
         </v-col>
 
@@ -107,21 +108,7 @@
   }
 
 </script>
-// <script>
-  //   ! function (d, s, id) {
-  //     var js, fjs = d.getElementsByTagName(s)[0],
-  //       p = /^http:/.test(d.location) ? 'http' : 'https';
-  //     if (!d.getElementById(id)) {
-  //       js = d.createElement(s);
-  //       js.id = id;
-  //       js.src = p + '://platform.twitter.com/widgets.js';
-  //       fjs.parentNode.insertBefore(js, fjs);
-  //     }
-  //   }(document, 'script', 'twitter-wjs');
 
-  // 
-
-</script>
 
 <style lang="scss">
   .day {
@@ -144,8 +131,8 @@
   }
 
   .main-btn {
-    padding: 60px !important;
-    font-size: 30px !important;
+    margin-left: 260px;
+    margin-top: -30px;
   }
 
   .count-btn-message {
