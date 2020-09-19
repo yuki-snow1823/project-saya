@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="main-wrapper">
     <v-row>
       <v-col md="2">
         <img src="../assets/仮素材_日付.gif" alt="">
@@ -50,7 +50,7 @@
         </v-col>
 
         <v-col class="count-btn-message d-flex">
-          <p class="test">沙耶がお祝いされた回数：{{ countSayaBirthday }}</p>
+          <p class="test">お祝いカウンター：{{ countSayaBirthday }}</p>
         </v-col>
       </v-col>
 
@@ -61,8 +61,8 @@
       </v-col>
 
       <v-col>
-        <a href="https://twitter.com/intent/tweet?text= + 'こんにちは' + '&hashtags=dotinstall'" id="test">あああ</a>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-text="ここの値をフォームにしたい">Tweet</a>
+        <!-- <a href="https://twitter.com/intent/tweet?text= + 'こんにちは' + '&hashtags=dotinstall'" id="test">あああ</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="ここの値をフォームにしたい">Tweet</a> -->
       </v-col>
 
       <v-col>
@@ -119,6 +119,10 @@
 
 
 <style lang="scss">
+  .main-wrapper {
+    margin-top: -40px;
+  }
+
   .day {
     padding-top: 60px; // 仮
     background-color: green;
@@ -144,7 +148,6 @@
   }
 
   .count-btn-message {
-    background-color: white;
     padding: 30px;
     font-size: 30px;
   }
