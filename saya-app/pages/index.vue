@@ -1,10 +1,10 @@
 <template>
   <v-container class="main-wrapper">
     <v-row>
-      <v-col md="2">
-        <img src="../assets/仮素材_日付.gif" alt="">
+      <v-col xs="2" sm="2" md="2">
+        <img class="date-img" src="../assets/仮素材_日付.gif" alt="">
       </v-col>
-      <v-col offset-md="2" md="6">
+      <v-col offset-md="2" xs="6" sm="6" md="6">
         <p class="top-message">
           Happy Birthday Saya!
         </p>
@@ -38,7 +38,8 @@
         </v-card>
 
         <v-col class="d-flex">
-          <v-textarea v-model="value" background-color="amber lighten-4" color="orange orange-darken-5" label="お祝いメッセージを入力する">
+          <v-textarea v-model="value" background-color="amber lighten-4" color="orange orange-darken-5"
+            label="お祝いメッセージを入力する">
           </v-textarea>
         </v-col>
 
@@ -58,9 +59,9 @@
           href="https://twitter.com/yuki82511988?ref_src=twsrc%5Etfw">Tweets by yuki82511988</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </v-col>
-      
+
     </v-row>
-    
+
 
 
   </v-container>
@@ -103,6 +104,44 @@
 
 
 <style lang="scss">
+  $pc: 2024px;
+  $mid: 1024px;
+  $tab: 680px;
+  $sp: 480px;
+
+  // レスポンシブデザイン用の指定
+  @mixin pc {
+    @media (max-width: ($pc)) {
+      @content;
+    }
+  }
+
+  @mixin mid {
+    @media (max-width: ($mid)) {
+      @content;
+    }
+  }
+
+  @mixin tab {
+    @media (max-width: ($tab)) {
+      @content;
+    }
+  }
+
+  @mixin sp {
+    @media (max-width: ($sp)) {
+      @content;
+    }
+  }
+
+  .date-img {
+
+    @include sp {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
   .main-wrapper {
     margin-top: -40px;
   }
