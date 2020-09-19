@@ -35,13 +35,12 @@
             </v-list-item-avatar>
           </v-list-item>
 
-          <!-- <v-card-actions>
-            <v-btn text></v-btn>
-          </v-card-actions> -->
         </v-card>
 
-        <v-textarea background-color="amber lighten-4" color="orange orange-darken-5" label="お祝いメッセージを入力する">
-        </v-textarea>
+        <v-col class="d-flex">
+          <v-textarea v-model="value" background-color="amber lighten-4" color="orange orange-darken-5" label="お祝いメッセージを入力する">
+          </v-textarea>
+        </v-col>
 
         <v-col class="d-flex">
           <v-btn class="main-btn" @click="count()" rounded color="#1fffff">
@@ -61,7 +60,8 @@
       </v-col>
 
       <v-col>
-
+        <a href="https://twitter.com/intent/tweet?text= + 'こんにちは' + '&hashtags=dotinstall'" id="test">あああ</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="ここの値をフォームにしたい">Tweet</a>
       </v-col>
     </v-row>
 
@@ -76,7 +76,8 @@
     data() {
       return {
         countSayaBirthday: 0,
-        text: "#朱鷺戸沙耶生誕祭2020"
+        text: "#朱鷺戸沙耶生誕祭2020",
+        value: ""
       }
     },
     methods: {
@@ -92,7 +93,6 @@
       let vm = this
       axios.get("/v1/counter").then(response => {
         vm = response;
-        console.log(response.data.test.count);
         this.countSayaBirthday = response.data.test.count;
       })
       this.countSayaBirthday
