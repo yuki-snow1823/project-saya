@@ -61,11 +61,6 @@
       </v-col>
 
       <v-col>
-        <!-- <a href="https://twitter.com/intent/tweet?text= + 'こんにちは' + '&hashtags=dotinstall'" id="test">あああ</a>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-text="ここの値をフォームにしたい">Tweet</a> -->
-      </v-col>
-
-      <v-col>
 
       </v-col>
     </v-row>
@@ -87,17 +82,14 @@
     methods: {
       async count() {
         let vm = this
-        console.log("hoge")
         await axios.put("/v1/counter").then(response => {
           vm = response;
-          console.log(response.data.test.count);
           this.countSayaBirthday = response.data.test.count;
         })
       }
     },
     created() {
       let vm = this
-      console.log("hage")
       axios.get("/v1/counter").then(response => {
         vm = response;
         console.log(response.data.test.count);
@@ -107,13 +99,6 @@
     },
     components: {}
   }
-
-  // console.log(document)
-  //   let tweet = document.getElementById("test")
-  //   let tweetUrl ='https://twitter.com/intent/tweet?text=' + "こんにちは" + '&hashtags=dotinstall';
-  //   console.log(tweet);
-  //   tweet.href = tweetUrl;
-
 
 </script>
 
