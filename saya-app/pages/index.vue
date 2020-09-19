@@ -43,7 +43,7 @@
         </v-col>
 
         <v-col class="d-flex">
-          <v-btn class="main-btn" @click="count()" :href="madeUrl" rounded color="#1fffff">
+          <v-btn class="main-btn" @click="count()" :href="madeUrl + value + text" rounded color="#1fffff">
             <v-icon color="orange orange-darken-5">mdi-star</v-icon>誕生日をお祝いする
           </v-btn>
         </v-col>
@@ -58,11 +58,9 @@
           href="https://twitter.com/yuki82511988?ref_src=twsrc%5Etfw">Tweets by yuki82511988</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </v-col>
-
-      <v-col>
-        <a :href="madeUrl" id="test">お祝いする</a>
-      </v-col>
+      
     </v-row>
+    
 
 
   </v-container>
@@ -75,14 +73,14 @@
     data() {
       return {
         countSayaBirthday: 0,
-        text: "#朱鷺戸沙耶生誕祭2020",
+        text: "&hashtags=朱鷺戸沙耶生誕祭2020",
         value: "",
-        madeUrl: ""
+        madeUrl: "https://twitter.com/intent/tweet?text="
       }
     },
     methods: {
       async count() {
-        this.madeUrl = "https://twitter.com/intent/tweet?text=" + this.value + "&hashtags=朱鷺戸沙耶生誕祭2020";
+        // this.madeUrl = "https://twitter.com/intent/tweet?text=" + this.value + "&hashtags=朱鷺戸沙耶生誕祭2020";
         let vm = this;
         await axios.put("/v1/counter").then(response => {
           vm = response;
@@ -132,6 +130,7 @@
     margin-left: 260px;
     margin-top: -30px;
   }
+
 
   .count-btn-message {
     padding: 30px;
