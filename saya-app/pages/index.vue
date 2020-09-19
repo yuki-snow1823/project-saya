@@ -60,8 +60,7 @@
       </v-col>
 
       <v-col>
-        <a href="https://twitter.com/intent/tweet?text= + 'こんにちは' + '&hashtags=dotinstall'" id="test">あああ</a>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-text="ここの値をフォームにしたい">Tweet</a>
+        <a :href="madeUrl" id="test">お祝いする</a>
       </v-col>
     </v-row>
 
@@ -77,12 +76,14 @@
       return {
         countSayaBirthday: 0,
         text: "#朱鷺戸沙耶生誕祭2020",
-        value: ""
+        value: "",
+        madeUrl: ""
       }
     },
     methods: {
       async count() {
-        let vm = this
+        this.madeUrl = "https://twitter.com/intent/tweet?text=" + this.value + "&hashtags=朱鷺戸沙耶生誕祭2020";
+        let vm = this;
         await axios.put("/v1/counter").then(response => {
           vm = response;
           this.countSayaBirthday = response.data.test.count;
