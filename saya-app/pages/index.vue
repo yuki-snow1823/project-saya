@@ -43,7 +43,7 @@
         </v-col>
 
         <v-col class="d-flex">
-          <v-btn class="main-btn" @click="count()" rounded color="#1fffff">
+          <v-btn class="main-btn" @click="count()" :href="madeUrl" rounded color="#1fffff">
             <v-icon color="orange orange-darken-5">mdi-star</v-icon>誕生日をお祝いする
           </v-btn>
         </v-col>
