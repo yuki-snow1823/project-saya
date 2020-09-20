@@ -13,7 +13,6 @@
 
 
     <v-row class="main-contents">
-
       <v-col class="" sm="4" md="2" lg="2">
         <img height="500px" src="../assets/saya.png" alt="">
       </v-col>
@@ -43,7 +42,7 @@
           </v-textarea>
         </v-col>
 
-        <v-col class="d-flex">
+        <v-col class="d-flex" sm="4">
           <v-btn class="main-btn" @click="count()" :href="madeUrl + value + text" rounded color="#1fffff">
             <v-icon color="orange orange-darken-5">mdi-star</v-icon>誕生日をお祝いする
           </v-btn>
@@ -135,23 +134,15 @@
   }
 
   .date-img {
-
+    z-index: 1;
     @include sp {
-      width: 200px;
-      height: 200px;
+      width: 100px;
+      height: 100px;
     }
   }
 
   .main-wrapper {
     margin-top: -40px;
-  }
-
-  .day {
-    padding-top: 60px; // 仮
-    background-color: green;
-    border-radius: 30px;
-    font-size: 30px;
-    // height: 300px;
   }
 
   .main-contents {
@@ -163,11 +154,20 @@
     font-size: 60px;
     margin-top: 120px;
     background-color: white;
+
+    @include sp {
+      margin-top: 40px;
+      font-size: 30px;
+    }
   }
 
   .main-btn {
     margin-left: 260px;
     margin-top: -30px;
+
+    @include sp {
+      margin-left: 180px;
+    }
   }
 
 
