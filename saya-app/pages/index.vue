@@ -61,6 +61,14 @@
 
     </v-row>
 
+    <v-row>
+      <v-col>
+        <ul v-for="message in messages" :key="message">
+          <li>{{ message }}</li>
+        </ul>
+      </v-col>
+    </v-row>
+
 
 
   </v-container>
@@ -75,7 +83,8 @@
         countSayaBirthday: 0,
         text: "&hashtags=朱鷺戸沙耶生誕祭2020",
         value: "",
-        madeUrl: "https://twitter.com/intent/tweet?text="
+        madeUrl: "https://twitter.com/intent/tweet?text=",
+        message: []
       }
     },
     methods: {
@@ -84,8 +93,9 @@
         let vm = this;
         await axios.put("/v1/counter").then(response => {
           vm = response;
-          console.log(response);
+          console.log(response.data.add);
           this.countSayaBirthday = response.data.test.count;
+          this.messages = response.data.add;
         })
       }
     },
@@ -94,12 +104,8 @@
       axios.get("/v1/counter").then(response => {
         vm = response;
         this.countSayaBirthday = response.data.test.count;
+      this.messages = response.data.add;
       })
-      axios.get("https://api.twitter.com/2/tweets/20").then(response => {
-        vm = response;
-        console.log(response);
-      })
-      this.countSayaBirthday
     },
     components: {}
   }
