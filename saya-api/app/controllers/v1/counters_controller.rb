@@ -1,40 +1,30 @@
 class V1::CountersController < ApplicationController
-
+  include TwitterService
+  
   def show
+    # au = authorization.new # concernのクラスのインスタンス化の実体を入れる
+    # 今回は実体化させずにselfメソッドで実行
+    client = Authorization.init
+
     @counter = Counter.find(1)
-    
-    client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = ENV["API_KEY"]
-      config.consumer_secret     = ENV["API_SECRET"]
-      config.access_token        = ENV["ACCESS_TOKEN"]
-      config.access_token_secret = ENV["ACCESS_TOKEN_SECRET"]
-    end
 
     @test = client.search("#朱鷺戸沙耶生誕祭2020", result_type: "recent").take(4).collect do |tweet|
-      # "#{tweet.user.screen_name}: #{tweet.text}"
-      # "#{tweet.user.profile_image_url} #{tweet.user.screen_name} #{tweet.text}"
-      "#{tweet.user.profile_image_url}"
+      # "#{tweet.user.profile_image_url}"
+      {
+        "image": "#{tweet.user.profile_image_url}",
+        "text": "#{tweet.user.screen_name}: #{tweet.text}"
+      }
     end
 
-    @user = client.search("#朱鷺戸沙耶生誕祭2020", result_type: "recent").take(4).collect do |tweet|
-      "#{tweet.user.screen_name}: #{tweet.text}"
-      # "#{tweet.user.profile_image_url} #{tweet.user.screen_name} #{tweet.text}"
-    end
-
-    render json: {test: @counter, add: {image: @test, user: @user}}
+    render json: {test: @counter, add: @test}
   end
 
   def update
+    client = authorization # concernのメソッド呼び出し
+
     @counter = Counter.find(1)
     @counter.count = @counter.count + 1
     @counter.save
-
-    client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = ENV["API_KEY"]
-      config.consumer_secret     = ENV["API_SECRET"]
-      config.access_token        = ENV["ACCESS_TOKEN"]
-      config.access_token_secret = ENV["ACCESS_TOKEN_SECRET"]
-    end
 
     # https://api.twitter.com/2/tweets/search/recent?query=python -H "Authorization: Bearer $BEARER_TOKEN"
     @test = client.search("#朱鷺戸沙耶生誕祭2020", result_type: "recent").take(5).collect do |tweet|

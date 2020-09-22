@@ -56,8 +56,8 @@
 
       <v-col md="3">
         <v-card v-for="(message,index) of messages" :key="index">
-          <img :src="message" alt="">
-          <p>{{ users[index] }}</p>
+          <img :src="message.image" alt="">
+          <p>{{ message.text }}</p>
         </v-card>
       </v-col>
 
@@ -82,7 +82,6 @@
         value: "",
         madeUrl: "https://twitter.com/intent/tweet?text=",
         messages: [],
-        users: [],
         text: ""
       }
     },
@@ -103,9 +102,7 @@
       axios.get("/v1/counter").then(response => {
         vm = response;
         this.countSayaBirthday = response.data.test.count;
-        this.messages = response.data.add.image;
-        this.users = response.data.add.user;
-        // this.messages["text"] = response.data.add.user;
+        this.messages = response.data.add;
         console.log(response.data.add);
       })
     },
