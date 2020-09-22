@@ -12,7 +12,7 @@
     </v-row>
 
 
-    <v-row class="main-contents">
+    <v-row class="main-contents" >
       <v-col class="" sm="4" md="2" lg="2">
         <img height="500px" src="../assets/saya.png" alt="">
       </v-col>
@@ -53,7 +53,7 @@
         </v-col>
       </v-col>
 
-      <v-col class="" md="3">
+      <v-col sm="12" md="3">
         <a class="twitter-timeline" data-width="300" data-height="600" data-theme="light"
           href="https://twitter.com/yuki82511988?ref_src=twsrc%5Etfw">Tweets by yuki82511988</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -84,6 +84,7 @@
         let vm = this;
         await axios.put("/v1/counter").then(response => {
           vm = response;
+          console.log(response);
           this.countSayaBirthday = response.data.test.count;
         })
       }
@@ -93,6 +94,10 @@
       axios.get("/v1/counter").then(response => {
         vm = response;
         this.countSayaBirthday = response.data.test.count;
+      })
+      axios.get("https://api.twitter.com/2/tweets/20").then(response => {
+        vm = response;
+        console.log(response);
       })
       this.countSayaBirthday
     },
@@ -166,7 +171,7 @@
     margin-top: -30px;
 
     @include sp {
-      margin-left: 180px;
+      margin-left: 180px; // ジリ貧な気がする。できれば設定として画面の中へ
     }
   }
 
@@ -174,6 +179,10 @@
   .count-btn-message {
     padding: 30px;
     font-size: 30px;
+  }
+
+  .twitter-timeline {
+    margin: 0 auto !important;
   }
 
 </style>
