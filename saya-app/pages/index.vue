@@ -14,7 +14,7 @@
 
     <v-row class="main-contents">
       <v-col class="" sm="4" md="2" lg="2">
-        <img height="500px" src="../assets/saya.png" alt="">
+        <img height="600px" src="../assets/tachie.png" alt="">
       </v-col>
 
       <v-col offset-md="2" md="5">
@@ -35,6 +35,9 @@
           </v-list-item>
 
         </v-card>
+        <v-col class="count-btn-message d-flex">
+          <p class="test">お祝いされた回数：{{ countSayaBirthday }}</p>
+        </v-col>
 
         <v-col class="d-flex">
           <v-textarea v-model="value" background-color="amber lighten-4" color="orange orange-darken-5"
@@ -48,30 +51,20 @@
           </v-btn>
         </v-col>
 
-        <v-col class="count-btn-message d-flex">
-          <p class="test">お祝いカウンター：{{ countSayaBirthday }}</p>
-        </v-col>
       </v-col>
 
-      <v-col sm="12" md="3">
-        <a class="twitter-timeline" data-width="300" data-height="600" data-theme="light"
-          href="https://twitter.com/yuki82511988?ref_src=twsrc%5Etfw">Tweets by yuki82511988</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </v-col>
 
-    </v-row>
-
-    <v-row>
-      <v-col>
+      <v-col md="3">
         <v-card v-for="(message,index) of messages" :key="index">
           <img :src="message" alt="">
-          <!-- <p>{{ message }}</p> -->
-          
-          <!-- <p>ここにツイート内容が表示されます。</p> -->
-          <p>{{ index }}</p>
+          <p>{{ users[index] }}</p>
         </v-card>
       </v-col>
+
+
     </v-row>
+
+
 
 
 
@@ -89,6 +82,7 @@
         value: "",
         madeUrl: "https://twitter.com/intent/tweet?text=",
         messages: [],
+        users: [],
         text: ""
       }
     },
@@ -110,7 +104,7 @@
         vm = response;
         this.countSayaBirthday = response.data.test.count;
         this.messages = response.data.add.image;
-        // this.messages["image"] = response.data.add.image;
+        this.users = response.data.add.user;
         // this.messages["text"] = response.data.add.user;
         console.log(response.data.add);
       })

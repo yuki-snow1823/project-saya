@@ -10,13 +10,13 @@ class V1::CountersController < ApplicationController
       config.access_token_secret = ENV["ACCESS_TOKEN_SECRET"]
     end
 
-    @test = client.search("#朱鷺戸沙耶生誕祭2020", result_type: "recent").take(6).collect do |tweet|
+    @test = client.search("#朱鷺戸沙耶生誕祭2020", result_type: "recent").take(4).collect do |tweet|
       # "#{tweet.user.screen_name}: #{tweet.text}"
       # "#{tweet.user.profile_image_url} #{tweet.user.screen_name} #{tweet.text}"
       "#{tweet.user.profile_image_url}"
     end
 
-    @user = client.search("#朱鷺戸沙耶生誕祭2020", result_type: "recent").take(6).collect do |tweet|
+    @user = client.search("#朱鷺戸沙耶生誕祭2020", result_type: "recent").take(4).collect do |tweet|
       "#{tweet.user.screen_name}: #{tweet.text}"
       # "#{tweet.user.profile_image_url} #{tweet.user.screen_name} #{tweet.text}"
     end
