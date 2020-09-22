@@ -12,7 +12,7 @@
     </v-row>
 
 
-    <v-row class="main-contents" >
+    <v-row class="main-contents">
       <v-col class="" sm="4" md="2" lg="2">
         <img height="500px" src="../assets/saya.png" alt="">
       </v-col>
@@ -63,9 +63,13 @@
 
     <v-row>
       <v-col>
-        <ul v-for="message in messages" :key="message">
-          <li>{{ message }}</li>
-        </ul>
+        <v-card v-for="(message,index) of messages" :key="index">
+          <img :src="message" alt="">
+          <!-- <p>{{ message }}</p> -->
+          
+          <!-- <p>ここにツイート内容が表示されます。</p> -->
+          <p>{{ index }}</p>
+        </v-card>
       </v-col>
     </v-row>
 
@@ -84,7 +88,8 @@
         text: "&hashtags=朱鷺戸沙耶生誕祭2020",
         value: "",
         madeUrl: "https://twitter.com/intent/tweet?text=",
-        message: []
+        messages: [],
+        text: ""
       }
     },
     methods: {
@@ -93,9 +98,9 @@
         let vm = this;
         await axios.put("/v1/counter").then(response => {
           vm = response;
-          console.log(response.data.add);
+          console.log(response.data.add.image);
           this.countSayaBirthday = response.data.test.count;
-          this.messages = response.data.add;
+
         })
       }
     },
@@ -104,7 +109,10 @@
       axios.get("/v1/counter").then(response => {
         vm = response;
         this.countSayaBirthday = response.data.test.count;
-      this.messages = response.data.add;
+        this.messages = response.data.add.image;
+        // this.messages["image"] = response.data.add.image;
+        // this.messages["text"] = response.data.add.user;
+        console.log(response.data.add);
       })
     },
     components: {}
@@ -146,6 +154,7 @@
 
   .date-img {
     z-index: 1;
+
     @include sp {
       width: 100px;
       height: 100px;
