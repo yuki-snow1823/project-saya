@@ -14,7 +14,7 @@
 
     <v-row class="main-contents">
       <v-col class="" sm="4" md="" lg="2">
-        <img height="800px" src="../assets/tachie.png" alt="">
+        <img class="main-image" height="800px" src="../assets/tachie.png" alt="">
       </v-col>
 
       <v-col offset-md="2" md="5">
@@ -36,7 +36,7 @@
         </v-card>
 
         <v-col class="count-btn-message d-flex mx-auto">
-          <v-card elevation="10" color="#40C4FF" shaped outlined>
+          <v-card class="sub-message-card" elevation="10" color="#81D4FA" shaped outlined>
             <v-list-item>
               <v-list-item-content>
                 <p class="test py-5 my-1">みんなにお祝いされた回数：{{ countSayaBirthday }}回！！</p>
@@ -52,7 +52,7 @@
           </v-textarea>
         </v-col>
 
-        <v-col class="d-flex" offset-md="8" sm="4">
+        <v-col class="d-flex" offset-md="8" sm="12">
           <v-btn class="main-btn" @click="count()" :href="madeUrl + value + text" rounded color="#F48FB1" height="60">
             <v-icon class="mr-1" color="#EC407A" >mdi-pistol</v-icon>
             <span class="btn-message">誕生日をお祝いする</span>
@@ -165,6 +165,12 @@
     }
   }
 
+  .main-image {
+    @include sp {
+      width: 100%;
+    }
+  }
+
   .main-wrapper {
     margin-top: -40px;
   }
@@ -172,6 +178,10 @@
   .main-contents {
     margin-bottom: 40px;
     margin-top: -40px;
+  }
+
+  .main-btn {
+    border: white solid 4px !important;
   }
 
   .top-message {
@@ -185,6 +195,10 @@
     }
   }
 
+  .sub-message-card {
+    border: white solid 4px !important;
+  }
+
   .btn-message {
     color: #711836;
   }
@@ -193,6 +207,7 @@
   .count-btn-message {
     padding: 30px;
     font-size: 30px;
+    
   }
 
   .twitter-timeline {
