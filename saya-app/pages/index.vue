@@ -1,18 +1,21 @@
 <template>
   <v-container class="main-wrapper">
     <v-row>
-      <v-col xs="2" sm="2" md="2">
+      <v-col xs="2" sm="12" md="2">
         <img class="date-img" src="../assets/仮素材_日付.gif" alt="">
       </v-col>
-      <v-col offset-md="2" xs="6" sm="6" md="6">
+      <v-col offset-md="2" xs="6" sm="12" md="6">
         <img class="mt-3" width="100%" height="300px" src="../assets/happy.png" alt="">
       </v-col>
     </v-row>
 
 
     <v-row class="main-contents">
-      <v-col class="" sm="4" md="" lg="2">
-        <img class="main-image" height="800px" src="../assets/tachie.png" alt="">
+      <!-- こいつに他の要素がかぶらないようにしたい -->
+      <v-col class="v-flex" sm="12" md="4" lg="2">
+        <!-- <v-card class="v-flex"> -->
+          <img class="main-image" height="800px" src="../assets/tachie.png" alt="">
+        <!-- </v-card> -->
       </v-col>
 
       <v-col offset-md="2" md="5">
@@ -182,6 +185,19 @@
 
   .main-btn {
     border: white solid 4px !important;
+    @include sp {
+      margin: auto !important;
+      width: 100% !important;
+    }
+    @include tab {
+      margin: auto !important;
+      width: 100% !important;
+    }
+    @include mid {
+      margin: auto !important;
+      width: 100% !important;
+    }
+    
   }
 
   .top-message {
@@ -207,7 +223,6 @@
   .btn-message {
     color: #711836;
   }
-
 
   .count-btn-message {
     padding: 30px;
