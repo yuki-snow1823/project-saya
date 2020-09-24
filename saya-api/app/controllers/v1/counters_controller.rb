@@ -12,7 +12,8 @@ class V1::CountersController < ApplicationController
       # "#{tweet.user.profile_image_url}"
       {
         "image": "#{tweet.user.profile_image_url}",
-        "text": "#{tweet.user.name}: #{tweet.text}",
+        "name": "#{tweet.user.name}",
+        "text": "#{tweet.text}",
         "tweet_link": "#{tweet.uri}"
       }
       # binding.pry
@@ -22,15 +23,21 @@ class V1::CountersController < ApplicationController
   end
 
   def update
-    client = authorization # concernのメソッド呼び出し
+    client = Authorization.init # concernのメソッド呼び出し
 
     @counter = Counter.find(1)
     @counter.count = @counter.count + 1
     @counter.save
 
-    # https://api.twitter.com/2/tweets/search/recent?query=python -H "Authorization: Bearer $BEARER_TOKEN"
-    @test = client.search("#朱鷺戸沙耶生誕祭2020", result_type: "recent").take(5).collect do |tweet|
-      "#{tweet}"
+    @test = client.search("#朱鷺戸沙耶生誕祭2020", result_type: "recent").take(4).collect do |tweet|
+      # "#{tweet.user.profile_image_url}"
+      {
+        "image": "#{tweet.user.profile_image_url}",
+        "name": "#{tweet.user.name}",
+        "text": "#{tweet.text}",
+        "tweet_link": "#{tweet.uri}"
+      }
+      # binding.pry
     end
 
     render json: {test: @counter, add: @test}

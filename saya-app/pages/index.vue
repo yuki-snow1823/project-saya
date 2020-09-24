@@ -53,8 +53,8 @@
         </v-col>
 
         <v-col class="d-flex" offset-md="8" sm="12">
-          <v-btn class="main-btn" @click="count()" :href="madeUrl + value + text" rounded color="#F48FB1" height="60">
-            <v-icon class="mr-1" color="#EC407A" >mdi-pistol</v-icon>
+          <v-btn class="main-btn" target="_blank" @click="count()" :href="madeUrl + value + text" rounded color="#F48FB1" height="60">
+            <v-icon class="mr-1" color="#EC407A">mdi-pistol</v-icon>
             <span class="btn-message">誕生日をお祝いする</span>
           </v-btn>
         </v-col>
@@ -66,18 +66,19 @@
         <div v-for="(message,index) of messages" :key="index">
           <v-card class="mb-5" :href="message.tweet_link" target="_blank">
             <v-list-item-avatar tile size="50">
-            <img class="twitter-icon" :src="message.image" alt="">
+              <img class="twitter-icon ml-3" :src="message.image" alt="">
             </v-list-item-avatar>
-            <span>{{ message.text }}</span>
+            <span>{{ message.name }}</span>
+            <v-list-item>
+              <v-list-item-content>
+                <span>{{ message.text }}</span>
+              </v-list-item-content>
+            </v-list-item>
           </v-card>
         </div>
       </v-col>
 
     </v-row>
-
-
-
-
 
   </v-container>
 </template>
@@ -98,13 +99,11 @@
     },
     methods: {
       async count() {
-        // this.madeUrl = "https://twitter.com/intent/tweet?text=" + this.value + "&hashtags=朱鷺戸沙耶生誕祭2020";
         let vm = this;
         await axios.put("/v1/counter").then(response => {
           vm = response;
           console.log(response.data.add.image);
           this.countSayaBirthday = response.data.test.count;
-
         })
       }
     },
@@ -216,7 +215,7 @@
   .count-btn-message {
     padding: 30px;
     font-size: 30px;
-    
+
   }
 
   .twitter-timeline {
