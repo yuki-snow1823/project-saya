@@ -5,9 +5,7 @@
         <img class="date-img" src="../assets/仮素材_日付.gif" alt="">
       </v-col>
       <v-col offset-md="2" xs="6" sm="6" md="6">
-        <p class="top-message">
-          Happy Birthday Saya!
-        </p>
+        <img class="mt-3" width="100%" height="300px" src="../assets/happy.png" alt="">
       </v-col>
     </v-row>
 
@@ -53,12 +51,11 @@
         </v-col>
 
         <v-col class="d-flex" offset-md="8" sm="12">
-          <v-btn class="main-btn" target="_blank" @click="count()" :href="madeUrl + value + text" rounded color="#F48FB1" height="60">
+          <v-btn class="main-btn" target="_blank" @click="count()" :href="madeUrl + value + mess" rounded color="#F48FB1" height="60">
             <v-icon class="mr-1" color="#EC407A">mdi-pistol</v-icon>
             <span class="btn-message">誕生日をお祝いする</span>
           </v-btn>
         </v-col>
-
       </v-col>
 
 
@@ -90,7 +87,7 @@
     data() {
       return {
         countSayaBirthday: 0,
-        text: "&hashtags=朱鷺戸沙耶生誕祭2020",
+        mess: "&hashtags=朱鷺戸沙耶生誕祭2020",
         value: "",
         madeUrl: "https://twitter.com/intent/tweet?text=",
         messages: [],
