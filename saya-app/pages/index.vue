@@ -64,9 +64,11 @@
 
       <v-col md="3">
         <div v-for="(message,index) of messages" :key="index">
-          <v-card :href="message.tweet_link" target="_blank">
-            <img :src="message.image" alt="">
-            <p>{{ message.text }}</p>
+          <v-card class="mb-5" :href="message.tweet_link" target="_blank">
+            <v-list-item-avatar tile size="50">
+            <img class="twitter-icon" :src="message.image" alt="">
+            </v-list-item-avatar>
+            <span>{{ message.text }}</span>
           </v-card>
         </div>
       </v-col>
@@ -195,6 +197,11 @@
       margin-top: 40px;
       font-size: 30px;
     }
+  }
+
+  .twitter-icon {
+    margin-left: 1%;
+    margin-top: 1%;
   }
 
   .sub-message-card {
