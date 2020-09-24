@@ -13,11 +13,12 @@
 
 
     <v-row class="main-contents">
-      <v-col class="" sm="4" md="2" lg="2">
-        <img height="600px" src="../assets/tachie.png" alt="">
+      <v-col class="" sm="4" md="" lg="2">
+        <img height="800px" src="../assets/tachie.png" alt="">
       </v-col>
 
       <v-col offset-md="2" md="5">
+
         <v-card class="mx-auto" outlined>
           <v-list-item three-line>
             <v-list-item-content>
@@ -28,15 +29,21 @@
                 ここにお祝いメッセージが入ります。<br>
               </v-list-item-subtitle>
             </v-list-item-content>
-
             <v-list-item-avatar tile size="80">
               <img src="../assets/mini_saya.jpg" alt="">
             </v-list-item-avatar>
           </v-list-item>
-
         </v-card>
-        <v-col class="count-btn-message d-flex">
-          <p class="test">お祝いされた回数：{{ countSayaBirthday }}</p>
+
+        <v-col class="count-btn-message d-flex mx-auto">
+          <v-card elevation="10" color="#40C4FF" shaped outlined>
+            <v-list-item>
+              <v-list-item-content>
+                <p class="test py-5 my-1">みんなにお祝いされた回数：{{ countSayaBirthday }}回！！</p>
+              </v-list-item-content>
+            </v-list-item>
+
+          </v-card>
         </v-col>
 
         <v-col class="d-flex">
@@ -45,9 +52,9 @@
           </v-textarea>
         </v-col>
 
-        <v-col class="d-flex" sm="4">
-          <v-btn class="main-btn" @click="count()" :href="madeUrl + value + text" rounded color="#1fffff">
-            <v-icon color="orange orange-darken-5">mdi-star</v-icon>誕生日をお祝いする
+        <v-col class="d-flex" offset-md="8" sm="4">
+          <v-btn class="main-btn" @click="count()" :href="madeUrl + value + text" rounded color="#40C4FF">
+            <v-icon color="orange orange-darken-5">mdi-pistol</v-icon>誕生日をお祝いする
           </v-btn>
         </v-col>
 
@@ -60,7 +67,6 @@
           <p>{{ message.text }}</p>
         </v-card>
       </v-col>
-
 
     </v-row>
 
@@ -143,6 +149,12 @@
     }
   }
 
+  @media (min-width: 960px) {
+    .container {
+      max-width: 100% !important;
+    }
+  }
+
   .date-img {
     z-index: 1;
 
@@ -173,12 +185,8 @@
   }
 
   .main-btn {
-    margin-left: 260px;
-    margin-top: -30px;
 
-    @include sp {
-      margin-left: 180px; // ジリ貧な気がする。できれば設定として画面の中へ
-    }
+    @include sp {}
   }
 
 
