@@ -12,8 +12,10 @@ class V1::CountersController < ApplicationController
       # "#{tweet.user.profile_image_url}"
       {
         "image": "#{tweet.user.profile_image_url}",
-        "text": "#{tweet.user.screen_name}: #{tweet.text}"
+        "text": "#{tweet.user.name}: #{tweet.text}",
+        "tweet_link": "#{tweet.uri}"
       }
+      # binding.pry
     end
 
     render json: {test: @counter, add: @test}

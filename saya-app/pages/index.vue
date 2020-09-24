@@ -63,10 +63,12 @@
 
 
       <v-col md="3">
-        <v-card v-for="(message,index) of messages" :key="index">
-          <img :src="message.image" alt="">
-          <p>{{ message.text }}</p>
-        </v-card>
+        <div v-for="(message,index) of messages" :key="index">
+          <v-card :href="message.tweet_link" target="_blank">
+            <img :src="message.image" alt="">
+            <p>{{ message.text }}</p>
+          </v-card>
+        </div>
       </v-col>
 
     </v-row>
