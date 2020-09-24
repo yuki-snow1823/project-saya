@@ -29,7 +29,7 @@
                 ここにお祝いメッセージが入ります。<br>
               </v-list-item-subtitle>
             </v-list-item-content>
-            <v-list-item-avatar tile size="80">
+            <v-list-item-avatar tile size="200">
               <img src="../assets/mini_saya.jpg" alt="">
             </v-list-item-avatar>
           </v-list-item>
@@ -53,8 +53,9 @@
         </v-col>
 
         <v-col class="d-flex" offset-md="8" sm="4">
-          <v-btn class="main-btn" @click="count()" :href="madeUrl + value + text" rounded color="#40C4FF">
-            <v-icon color="orange orange-darken-5">mdi-pistol</v-icon>誕生日をお祝いする
+          <v-btn class="main-btn" @click="count()" :href="madeUrl + value + text" rounded color="#F48FB1" height="60">
+            <v-icon class="mr-1" color="#EC407A" >mdi-pistol</v-icon>
+            <span class="btn-message">誕生日をお祝いする</span>
           </v-btn>
         </v-col>
 
@@ -184,9 +185,8 @@
     }
   }
 
-  .main-btn {
-
-    @include sp {}
+  .btn-message {
+    color: #711836;
   }
 
 
