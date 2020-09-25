@@ -13,7 +13,7 @@ class V1::CountersController < ApplicationController
       {
         "image": "#{tweet.user.profile_image_url}",
         "name": "#{tweet.user.name}",
-        "text": "#{tweet.text}",
+        "text": "#{tweet.full_text}",
         "tweet_link": "#{tweet.uri}"
       }
       # binding.pry
@@ -34,7 +34,7 @@ class V1::CountersController < ApplicationController
       {
         "image": "#{tweet.user.profile_image_url}",
         "name": "#{tweet.user.name}",
-        "text": "#{tweet.text}",
+        "text": "#{tweet.full_text}",
         "tweet_link": "#{tweet.uri}"
       }
       # binding.pry

@@ -10,16 +10,15 @@
     </v-row>
 
 
-    <v-row class="main-contents">
+    <v-row class="main-contents" cols="12">
       <!-- こいつに他の要素がかぶらないようにしたい -->
-      <v-col class="v-flex" sm="12" md="4" lg="2">
+      <v-col class="v-flex" sm="12" md="2" lg="4">
         <!-- <v-card class="v-flex"> -->
-          <img class="main-image" height="800px" src="../assets/tachie.png" alt="">
+          <img class="main-image" width="100%" src="../assets/tachie.png" alt="">
         <!-- </v-card> -->
       </v-col>
 
-      <v-col offset-md="2" md="5">
-
+      <v-col md="5">
         <v-card class="mx-auto" outlined>
           <v-list-item three-line>
             <v-list-item-content>
@@ -218,6 +217,7 @@
 
   .sub-message-card {
     border: white solid 4px !important;
+    margin: 0 auto !important;
   }
 
   .btn-message {
