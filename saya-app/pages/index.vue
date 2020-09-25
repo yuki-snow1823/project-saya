@@ -22,7 +22,7 @@
       <!-- こいつに他の要素がかぶらないようにしたい -->
       <v-col class="v-flex" sm="12" md="2" lg="4">
         <!-- <v-card class="v-flex"> -->
-        <img class="main-image" width="100%" src="../assets/tachie.png" alt="">
+        <img class="main-image animate__animated animate__bounce" width="100%" src="../assets/tachie.png" alt="">
         <!-- </v-card> -->
       </v-col>
 

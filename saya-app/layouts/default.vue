@@ -21,11 +21,27 @@
   export default {
     data() {
       return {
-        links: [
-          { name: "製作者", rel: "https://twitter.com/magic18jpn" },
-          { name: "デザイナー", rel: "https://twitter.com/K_raris" },
-          { name: "版権元", rel: "https://key.visualarts.gr.jp/" }
+        links: [{
+            name: "製作者",
+            rel: "https://twitter.com/magic18jpn"
+          },
+          {
+            name: "デザイナー",
+            rel: "https://twitter.com/K_raris"
+          },
+          {
+            name: "版権元",
+            rel: "https://key.visualarts.gr.jp/"
+          }
         ]
+      }
+    },
+    head() {
+      return {
+        link: [{
+          rel: "stylesheet",
+          href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        }]
       }
     },
     created() {},
@@ -39,6 +55,7 @@
     background-repeat: repeat;
     // スマホのサイズで画像の真ん中を参照するように変更したい（サイズそのまま）
   }
+
   .link {
     color: white !important;
   }
