@@ -14,6 +14,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "core-js": "^3.6.5",
+    "loaders.css": "^0.1.2",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {

@@ -13,12 +13,18 @@
         </v-row>
       </v-footer>
     </v-card>
+    <!-- <Loading></Loading> -->
   </v-app>
 
 </template>
 
 <script>
+import Loading from "@/components/Loading"; //追加
+
   export default {
+  components: {
+    Loading 
+  },
     data() {
       return {
         links: [{
