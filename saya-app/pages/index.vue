@@ -65,6 +65,16 @@
 
       <v-col md="3">
         <v-card class="tweet-wrapper">
+          <v-container text-center>
+            <v-row>
+              <v-col class="twitter-logo" >
+                <a href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click">
+                  <img width="30%" src="../assets/Twitter_Logo_Blue.png" alt="">
+                </a>
+              </v-col>
+            </v-row>
+          </v-container>
+
           <v-container v-for="(message,index) of messages" :key="index">
             <v-card :href="message.tweet_link" target="_blank">
               <v-list-item-avatar tile size="50">
@@ -92,7 +102,7 @@
               <v-list-item-avatar tile size="80">
                 <img class="twitter-icon ml-3" src="../assets/mini_saya.jpg" alt="">
               </v-list-item-avatar>
-                Illustlator Kralis
+                Illustlator Kraris
             </v-card>
             <v-card color="amber lighten-4">
               <v-list-item-avatar tile size="80">
@@ -100,6 +110,7 @@
               </v-list-item-avatar>
                 Web Designer M.Y
             </v-card>
+            <p>版権元：VisualArts/Key</p>
 
           </v-col>
         </v-container>
@@ -260,6 +271,12 @@
     padding: 30px;
     font-size: 30px;
 
+  }
+
+  .twitter-logo {
+    margin: 0 10%;
+    background: rgba(174, 247, 247, 0.801);
+    padding: 0px;
   }
 
   .birthday-card {
