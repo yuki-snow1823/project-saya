@@ -15,12 +15,12 @@
       <!-- こいつに他の要素がかぶらないようにしたい -->
       <v-col class="v-flex" sm="12" md="2" lg="4">
         <!-- <v-card class="v-flex"> -->
-        <img class="main-image animate__animated animate__slideInDown" width="100%" src="../assets/tachie.png" alt="">
+        <img class="main-image animate__animated animate__pulse" width="100%" src="../assets/tachie.png" alt="">
         <!-- </v-card> -->
       </v-col>
 
       <v-col md="5">
-        <v-card class="mx-auto" outlined>
+        <v-card class="mx-auto birthday-card" outlined>
           <v-list-item three-line>
             <v-list-item-content>
               <div class="overline mb-4">#朱鷺戸沙耶生誕祭2020</div>
@@ -82,10 +82,25 @@
 
         <v-container>
           <v-col md="10">
-            <v-card>
-              俺の情報
+            <v-card color="amber lighten-4 mb-2">
+              <v-list-item-avatar tile size="80">
+                <img class="twitter-icon ml-3" src="../assets/mini_saya.jpg" alt="">
+              </v-list-item-avatar>
+                Programmer Yuki
             </v-card>
-            クラリスの情報
+            <v-card color="amber lighten-4 mb-2">
+              <v-list-item-avatar tile size="80">
+                <img class="twitter-icon ml-3" src="../assets/mini_saya.jpg" alt="">
+              </v-list-item-avatar>
+                Illustlator Kralis
+            </v-card>
+            <v-card color="amber lighten-4">
+              <v-list-item-avatar tile size="80">
+                <img class="twitter-icon ml-3" src="../assets/mini_saya.jpg" alt="">
+              </v-list-item-avatar>
+                Web Designer M.Y
+            </v-card>
+
           </v-col>
         </v-container>
       </v-col>
@@ -245,6 +260,10 @@
     padding: 30px;
     font-size: 30px;
 
+  }
+
+  .birthday-card {
+    background: rgba(255, 255, 255, 0.692) !important;
   }
 
   .tweet-wrapper {
