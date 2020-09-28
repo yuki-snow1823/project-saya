@@ -79,7 +79,17 @@
             </v-card>
           </v-container>
         </v-card>
+
+        <v-container>
+          <v-col md="10">
+            <v-card>
+              俺の情報
+            </v-card>
+            クラリスの情報
+          </v-col>
+        </v-container>
       </v-col>
+
 
     </v-row>
 
