@@ -3,16 +3,9 @@
 
     <v-row>
 
-      <v-col cols="12" xs="2" sm="2" md="2">
-        <!-- 画像もらったらabsoluteでおめでとうメッセージに重ねる -->
+      <v-col cols="12" xs="12" sm="10" offset-md="1" md="10">
         <v-container text-center>
-          <img class="date-img" src="../assets/仮素材_日付.gif" alt="">
-        </v-container>
-      </v-col>
-
-      <v-col cols="12" xs="12" sm="10" md="10">
-        <v-container text-center>
-          <img class="mt-3" width="70%" height="70%" src="../assets/happy.png" alt="">
+          <img class="my-10" width="70%" height="70%" src="../assets/title.png" alt="">
         </v-container>
       </v-col>
 
@@ -71,19 +64,21 @@
 
 
       <v-col md="3">
-        <div v-for="(message,index) of messages" :key="index">
-          <v-card class="mb-5" :href="message.tweet_link" target="_blank">
-            <v-list-item-avatar tile size="50">
-              <img class="twitter-icon ml-3" :src="message.image" alt="">
-            </v-list-item-avatar>
-            <span>{{ message.name }}</span>
-            <v-list-item>
-              <v-list-item-content>
-                <span>{{ message.text }}</span>
-              </v-list-item-content>
-            </v-list-item>
-          </v-card>
-        </div>
+        <v-card class="tweet-wrapper">
+          <v-container v-for="(message,index) of messages" :key="index">
+            <v-card :href="message.tweet_link" target="_blank">
+              <v-list-item-avatar tile size="50">
+                <img class="twitter-icon ml-3" :src="message.image" alt="">
+              </v-list-item-avatar>
+              <span>{{ message.name }}</span>
+              <v-list-item>
+                <v-list-item-content>
+                  <span>{{ message.text }}</span>
+                </v-list-item-content>
+              </v-list-item>
+            </v-card>
+          </v-container>
+        </v-card>
       </v-col>
 
     </v-row>
@@ -240,6 +235,10 @@
     padding: 30px;
     font-size: 30px;
 
+  }
+
+  .tweet-wrapper {
+    background: rgba(255, 255, 255, 0.692) !important;
   }
 
   .twitter-timeline {
