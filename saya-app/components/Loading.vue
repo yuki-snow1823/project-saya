@@ -5,6 +5,7 @@
         <div class="ball"></div>
       </div>
     </div>
+        <p>うんがー！！！！！！！！！！！！！</p>
   </div>
 </template>
 
@@ -18,7 +19,7 @@ export default {
 </script>
 
 <style  lang="scss" scoped>
-$theme-color: #25b290;
+$theme-color: #fffb29;
 .loader-container {
   position: fixed;
   top: 0;

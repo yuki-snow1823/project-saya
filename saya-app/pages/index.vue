@@ -2,7 +2,7 @@
   <v-container class="main-wrapper">
 
     <v-row>
-      <v-col cols="12" xs="12" sm="10" offset-md="1" md="10">
+      <v-col cols="12" xs="12" sm="12" offset-md="1" md="10">
         <v-container text-center>
           <img class="my-10" width="100%" height="100%" src="../assets/title.png" alt="">
         </v-container>
@@ -16,7 +16,7 @@
         </v-hover>
       </v-col>
 
-      <v-col md="5">
+      <v-col md="5" sm="12">
         <v-card class="mx-auto birthday-card" outlined>
           <v-list-item three-line>
             <v-list-item-content>
@@ -24,12 +24,12 @@
               target="_blank"
               class="hashtag-title overline mb-4">#朱鷺戸沙耶生誕祭2020</a>
 
-              <v-list-item-title class="headline mb-1">沙耶さん！お誕生日おめでとう！</v-list-item-title>
+              <v-list-item-title class="headline mb-1">沙耶さん！<br>お誕生日おめでとう！</v-list-item-title>
               <v-list-item-subtitle class="my-3">
                 どうか幸せになってください！
               </v-list-item-subtitle>
             </v-list-item-content>
-            <v-list-item-avatar tile size="200">
+            <v-list-item-avatar tile size="150">
               <img src="../assets/sayaface.png" alt="">
             </v-list-item-avatar>
           </v-list-item>
