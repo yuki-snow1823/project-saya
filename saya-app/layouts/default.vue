@@ -61,7 +61,9 @@ import Loading from "@/components/Loading"; //追加
 }
   .bg {
     background-image: url("~@/assets/background.png") !important;
-    background-size: cover !important;
+    // width: 100% !important;
+    background-size: 100% !important; // いい感じになる
+    // background-position: center !important;
     // background-repeat: no-repeat !important;
     // スマホのサイズで画像の真ん中を参照するように変更したい（サイズそのまま）
   }
