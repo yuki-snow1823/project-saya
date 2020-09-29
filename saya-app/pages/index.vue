@@ -4,15 +4,14 @@
     <v-row>
       <v-col cols="12" xs="12" sm="10" offset-md="1" md="10">
         <v-container text-center>
-          <img class="my-10" width="70%" height="70%" src="../assets/title.png" alt="">
+          <img class="my-10" width="100%" height="100%" src="../assets/title.png" alt="">
         </v-container>
       </v-col>
     </v-row>
 
     <v-row class="main-contents" cols="12">
       <v-col class="v-flex" sm="12" md="2" lg="4">
-        <v-hover v-slot:default="{ hover }">
-
+        <v-hover v-slot:default="{ hover }" open-delay="200">
           <img class="main-image animate__animated animate__pulse" width="100%" :src="hover ? a : b" alt="">
         </v-hover>
       </v-col>
@@ -21,15 +20,17 @@
         <v-card class="mx-auto birthday-card" outlined>
           <v-list-item three-line>
             <v-list-item-content>
-              <div class="overline mb-4">#朱鷺戸沙耶生誕祭2020</div>
-              <v-list-item-title class="headline mb-1">沙耶さん！おめでとう！</v-list-item-title>
+              <a href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click" 
+              target="_blank"
+              class="hashtag-title overline mb-4">#朱鷺戸沙耶生誕祭2020</a>
+
+              <v-list-item-title class="headline mb-1">沙耶さん！お誕生日おめでとう！</v-list-item-title>
               <v-list-item-subtitle class="my-3">
-                ここにお祝いメッセージが入ります。<br>
-                ここにお祝いメッセージが入ります。<br>
+                どうか幸せになってください！
               </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-avatar tile size="200">
-              <img src="../assets/mini_saya.jpg" alt="">
+              <img src="../assets/sayaface.png" alt="">
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -63,16 +64,12 @@
 
       <v-col md="3">
         <v-card class="tweet-wrapper">
-          <v-container text-center>
-            <v-row>
-              <v-col class="twitter-logo">
-                <a
-                  href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click">
-                  <img width="30%" src="../assets/Twitter_Logo_Blue.png" alt="">
-                </a>
-              </v-col>
-            </v-row>
-          </v-container>
+          <v-card href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click" class="tweet-logo-wrapper" color="rgba(158, 200, 255, 0.747)">
+            <v-container class="pd-0" text-center>
+
+                <img width="20%" src="../assets/Twitter_Logo_Blue.png" alt="">
+            </v-container>
+          </v-card>
 
           <v-container v-for="(message,index) of messages" :key="index">
             <v-card :href="message.tweet_link" target="_blank">
@@ -91,25 +88,33 @@
 
         <v-container>
           <v-col md="10">
-            <v-card color="amber lighten-4 mb-2">
+            <v-card class="mb-2" color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="twitter-icon ml-3" src="../assets/mini_saya.jpg" alt="">
+                <img class="twitter-icon" src="../assets/mini_saya.jpg" alt="">
               </v-list-item-avatar>
-              Programmer Yuki
+              <span class="twitter-name">
+                programmer Yuki
+              </span>
             </v-card>
-            <v-card color="amber lighten-4 mb-2">
+            <v-card class="mb-2" color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="twitter-icon ml-3" src="../assets/mini_saya.jpg" alt="">
+                <img class="twitter-icon" src="../assets/mini_saya.jpg" alt="">
               </v-list-item-avatar>
+              <span class="twitter-name">
               Illustlator Kraris
+              </span>
             </v-card>
-            <v-card color="amber lighten-4">
+            <v-card class="mb-2" color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="twitter-icon ml-3" src="../assets/mini_saya.jpg" alt="">
+                <img class="twitter-icon" src="../assets/mini_saya.jpg" alt="">
               </v-list-item-avatar>
-              Web Designer M.Y
+              <span class="twitter-name">
+              Designer ももりんご
+              </span>
             </v-card>
-            <p>版権元：VisualArts/Key</p>
+            <v-card color="rgba(242, 246, 92, 0.6)" class="px-1 py-1">
+              <span class="key-link">版権元：VisualArts/Key</span>
+              </v-card>
 
           </v-col>
         </v-container>
@@ -253,6 +258,10 @@
     }
   }
 
+  .hashtag-title {
+    text-decoration: none;
+  }
+
   .twitter-icon {
     margin-left: 1%;
     margin-top: 1%;
@@ -270,17 +279,14 @@
   .count-btn-message {
     padding: 30px;
     font-size: 30px;
-
-  }
-
-  .twitter-logo {
-    margin: 0 10%;
-    background: rgba(174, 247, 247, 0.801);
-    padding: 0px;
   }
 
   .birthday-card {
     background: rgba(255, 255, 255, 0.692) !important;
+  }
+
+  .twitter-name {
+    color: white;
   }
 
   .tweet-wrapper {
@@ -289,6 +295,10 @@
 
   .twitter-timeline {
     margin: 0 auto !important;
+  }
+
+  .key-link {
+    color: rgb(68 90 203 / 87%);
   }
 
 </style>
