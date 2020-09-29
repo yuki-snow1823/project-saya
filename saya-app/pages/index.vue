@@ -2,21 +2,19 @@
   <v-container class="main-wrapper">
 
     <v-row>
-
       <v-col cols="12" xs="12" sm="10" offset-md="1" md="10">
         <v-container text-center>
           <img class="my-10" width="70%" height="70%" src="../assets/title.png" alt="">
         </v-container>
       </v-col>
-
     </v-row>
 
     <v-row class="main-contents" cols="12">
-      <!-- こいつに他の要素がかぶらないようにしたい -->
       <v-col class="v-flex" sm="12" md="2" lg="4">
-        <!-- <v-card class="v-flex"> -->
-        <img class="main-image animate__animated animate__pulse" width="100%" src="../assets/tachie.png" alt="">
-        <!-- </v-card> -->
+        <v-hover v-slot:default="{ hover }">
+
+          <img class="main-image animate__animated animate__pulse" width="100%" :src="hover ? a : b" alt="">
+        </v-hover>
       </v-col>
 
       <v-col md="5">
@@ -67,8 +65,9 @@
         <v-card class="tweet-wrapper">
           <v-container text-center>
             <v-row>
-              <v-col class="twitter-logo" >
-                <a href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click">
+              <v-col class="twitter-logo">
+                <a
+                  href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click">
                   <img width="30%" src="../assets/Twitter_Logo_Blue.png" alt="">
                 </a>
               </v-col>
@@ -96,26 +95,25 @@
               <v-list-item-avatar tile size="80">
                 <img class="twitter-icon ml-3" src="../assets/mini_saya.jpg" alt="">
               </v-list-item-avatar>
-                Programmer Yuki
+              Programmer Yuki
             </v-card>
             <v-card color="amber lighten-4 mb-2">
               <v-list-item-avatar tile size="80">
                 <img class="twitter-icon ml-3" src="../assets/mini_saya.jpg" alt="">
               </v-list-item-avatar>
-                Illustlator Kraris
+              Illustlator Kraris
             </v-card>
             <v-card color="amber lighten-4">
               <v-list-item-avatar tile size="80">
                 <img class="twitter-icon ml-3" src="../assets/mini_saya.jpg" alt="">
               </v-list-item-avatar>
-                Web Designer M.Y
+              Web Designer M.Y
             </v-card>
             <p>版権元：VisualArts/Key</p>
 
           </v-col>
         </v-container>
       </v-col>
-
 
     </v-row>
 
@@ -133,7 +131,9 @@
         value: "",
         madeUrl: "https://twitter.com/intent/tweet?text=",
         messages: [],
-        text: ""
+        text: "",
+        a: require('@/assets/chibi.png'),
+        b: require('@/assets/tachie.png')
       }
     },
     methods: {
