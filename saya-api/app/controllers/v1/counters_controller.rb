@@ -43,6 +43,12 @@ class V1::CountersController < ApplicationController
     render json: {test: @counter, add: @test}
   end
 
+  # お試し
+  # def create
+  #   client = Authorization.init
+  #   client.update("rubyから投稿するテスト")
+  #   # render json: {add: @test}
+  # end
 
   # private
   # def counter_params
