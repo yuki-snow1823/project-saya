@@ -43,12 +43,7 @@ class V1::CountersController < ApplicationController
     render json: {test: @counter, add: @test}
   end
 
-  # お試し
-  def create
-    client = Authorization.init
-    @test = client.post
-    render json: {add: @test}
-  end
+
   # private
   # def counter_params
   #   params.require(:counter).permit(:count)
