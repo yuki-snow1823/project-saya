@@ -118,8 +118,8 @@
 
           </v-col>
         </v-container>
+<v-btn @click="openWindow()" >神ボタン</v-btn>
       </v-col>
-
     </v-row>
 
   </v-container>
@@ -149,6 +149,9 @@
           console.log(response.data.add.image);
           this.countSayaBirthday = response.data.test.count;
         })
+      },
+      openWindow() {
+        window.open(this.madeUrl + this.value + this.mess, '', 'width=600,height=500,top=50,left=50');
       }
     },
     created() {
@@ -157,8 +160,13 @@
         vm = response;
         this.countSayaBirthday = response.data.test.count;
         this.messages = response.data.add;
-        console.log(response.data.add);
+        // console.log(response.data.add);
       })
+      // test
+      // axios.post("/v1/counter").then(response => {
+      //   vm = response;
+      //   console.log(response.data.add);
+      // })
     },
     components: {}
   }
