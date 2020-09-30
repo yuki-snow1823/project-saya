@@ -46,3 +46,9 @@ gem 'dotenv-rails'
 gem 'pry-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
+
+# 試し
+gem 'minimum-omniauth-scaffold'
+
+gem 'settingslogic'
+
