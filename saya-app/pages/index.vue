@@ -20,9 +20,8 @@
         <v-card class="mx-auto birthday-card" outlined>
           <v-list-item three-line>
             <v-list-item-content>
-              <a href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click" 
-              target="_blank"
-              class="hashtag-title overline mb-4">#朱鷺戸沙耶生誕祭2020</a>
+              <a href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click"
+                target="_blank" class="hashtag-title overline mb-4">#朱鷺戸沙耶生誕祭2020</a>
 
               <v-list-item-title class="headline mb-1">沙耶さん！<br>お誕生日おめでとう！</v-list-item-title>
               <v-list-item-subtitle class="my-3">
@@ -53,8 +52,8 @@
         </v-col>
 
         <v-col class="d-flex" offset-md="8" sm="12">
-          <v-btn class="main-btn" target="_blank" @click="count()" :href="madeUrl + value + mess" rounded
-            color="#F48FB1" height="60">
+          <v-btn :disabled="btnFalse" class="main-btn" target="_blank" @click="count()" :href="madeUrl + value + mess"
+            rounded color="#F48FB1" height="60">
             <v-icon class="mr-1" color="#EC407A">mdi-pistol</v-icon>
             <span class="btn-message">誕生日をお祝いする</span>
           </v-btn>
@@ -64,10 +63,12 @@
 
       <v-col md="3">
         <v-card class="tweet-wrapper">
-          <v-card href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click" class="tweet-logo-wrapper" color="rgba(158, 200, 255, 0.747)">
+          <v-card
+            href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click"
+            class="tweet-logo-wrapper" color="rgba(158, 200, 255, 0.747)">
             <v-container class="pd-0" text-center>
 
-                <img width="20%" src="../assets/Twitter_Logo_Blue.png" alt="">
+              <img width="20%" src="../assets/Twitter_Logo_Blue.png" alt="">
             </v-container>
           </v-card>
 
@@ -102,7 +103,7 @@
                 <img class="twitter-icon" src="../assets/kraris.png" alt="">
               </v-list-item-avatar>
               <span class="twitter-name">
-              Illustlator Kraris
+                Illustlator Kraris
               </span>
             </v-card>
 
@@ -111,17 +112,17 @@
                 <img class="twitter-icon" src="../assets/momoringo.png" alt="">
               </v-list-item-avatar>
               <span class="twitter-name">
-              Designer ももりんご
+                Designer ももりんご
               </span>
             </v-card>
 
             <v-card href="https://key.visualarts.gr.jp/" color="rgba(242, 246, 92, 0.6)" class="px-1 py-1">
               <span class="key-link">版権元：VISUAL ARTS/Key</span>
-              </v-card>
+            </v-card>
 
           </v-col>
         </v-container>
-        <v-btn @click="openWindow()" >神ボタン</v-btn>
+        <v-btn @click="openWindow()">神ボタン</v-btn>
       </v-col>
     </v-row>
 
@@ -141,7 +142,7 @@
         messages: [],
         text: "",
         a: require('@/assets/chibi.png'),
-        b: require('@/assets/tachie.png')
+        b: require('@/assets/tachie.png'),
       }
     },
     methods: {
@@ -171,7 +172,16 @@
       //   console.log(response.data.add);
       // })
     },
-    components: {}
+    components: {},
+    computed: {
+      btnFalse: function () {
+        if (this.value.length > 120) {
+          return true
+        } else {
+          return false
+        }
+      }
+    }
   }
 
 </script>
