@@ -13,18 +13,18 @@
         </v-row>
       </v-footer>
     </v-card>
-    <!-- <Loading></Loading> -->
+    <Loading v-if="show"></Loading>
   </v-app>
 
 </template>
 
 <script>
-import Loading from "@/components/Loading"; //追加
+  import Loading from "@/components/Loading"; //追加
 
   export default {
-  components: {
-    Loading 
-  },
+    components: {
+      Loading
+    },
     data() {
       return {
         links: [{
@@ -39,7 +39,8 @@ import Loading from "@/components/Loading"; //追加
             name: "版権元",
             rel: "https://key.visualarts.gr.jp/"
           }
-        ]
+        ],
+        show: true
       }
     },
     head() {
@@ -50,15 +51,30 @@ import Loading from "@/components/Loading"; //追加
         }]
       }
     },
-    created() {},
+    created() {
+              setTimeout(() => {
+          this.show = false
+        }, 3000)
+    },
+    // methods: {
+    //         showFlash(){
+    //     this.show = true;
+    //   // setTimeoutで3000ms後にshowをfalseにする
+    //     setTimeout(() => {
+    //       this.show = false}
+    //       ,3000
+    //     )
+    //   }
+    // }
   }
 
 </script>
 
 <style lang="scss">
-* {
-  margin:0 ;
-}
+  * {
+    margin: 0;
+  }
+
   .bg {
     background-image: url("~@/assets/background.png") !important;
     // width: 100% !important;

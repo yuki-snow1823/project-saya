@@ -166,11 +166,6 @@
         this.messages = response.data.add;
         // console.log(response.data.add);
       })
-      // test
-      // axios.post("/v1/counter").then(response => {
-      //   vm = response;
-      //   console.log(response.data.add);
-      // })
     },
     components: {},
     computed: {

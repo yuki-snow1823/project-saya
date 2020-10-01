@@ -1,11 +1,10 @@
 <template>
   <div class="loader-container">
     <div class="loaders">
-      <div class="ball-clip-rotate">
+      <div class="ball-scale">
         <div class="ball"></div>
       </div>
     </div>
-        <p>うんがー！！！！！！！！！！！！！</p>
   </div>
 </template>
 
@@ -19,7 +18,7 @@ export default {
 </script>
 
 <style  lang="scss" scoped>
-$theme-color: #fffb29;
+$theme-color: #2275e2;
 .loader-container {
   position: fixed;
   top: 0;
@@ -27,19 +26,19 @@ $theme-color: #fffb29;
   width: 100%;
   height: 100vh;
   background: #eee;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
-.ball-clip-rotate > div {
-  border: 2px solid $theme-color;
+.ball-scale > div {
+  border: 3px solid $theme-color;
   /* background-color: orange !important; */
-  border-bottom-color: transparent !important;
+  // border-bottom-color: transparent !important;
 }
 
-.ball-clip-rotate {
+.ball-scale {
   position: absolute;
   top: 50%;
-  color: red;
+  color: rgb(0, 102, 255);
   transform: translate(-50%, -50%);
   left: 50%;
 }
