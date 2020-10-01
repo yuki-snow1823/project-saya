@@ -47,7 +47,7 @@
         </v-col>
 
         <v-col class="d-flex">
-          <v-textarea v-model="value" background-color="amber lighten-4" color="orange orange-darken-5"
+          <v-textarea counter="120" v-model="value" background-color="amber lighten-4" color="orange orange-darken-5"
             label="お祝いメッセージを入力する">
           </v-textarea>
         </v-col>
@@ -88,37 +88,40 @@
 
         <v-container>
           <v-col md="10">
-            <v-card class="mb-2" color="rgba(86, 168, 165, 0.836)">
+            <v-card href="https://twitter.com/yuki82511988" class="mb-2" color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="twitter-icon" src="../assets/mini_saya.jpg" alt="">
+                <img class="twitter-icon" src="../assets/yuki.png" alt="">
               </v-list-item-avatar>
               <span class="twitter-name">
                 programmer Yuki
               </span>
             </v-card>
-            <v-card class="mb-2" color="rgba(86, 168, 165, 0.836)">
+
+            <v-card href="https://twitter.com/K_raris" class="mb-2" color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="twitter-icon" src="../assets/mini_saya.jpg" alt="">
+                <img class="twitter-icon" src="../assets/kraris.png" alt="">
               </v-list-item-avatar>
               <span class="twitter-name">
               Illustlator Kraris
               </span>
             </v-card>
-            <v-card class="mb-2" color="rgba(86, 168, 165, 0.836)">
+
+            <v-card href="https://twitter.com/momoringo_natan" class="mb-2" color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="twitter-icon" src="../assets/mini_saya.jpg" alt="">
+                <img class="twitter-icon" src="../assets/momoringo.png" alt="">
               </v-list-item-avatar>
               <span class="twitter-name">
               Designer ももりんご
               </span>
             </v-card>
-            <v-card color="rgba(242, 246, 92, 0.6)" class="px-1 py-1">
-              <span class="key-link">版権元：VisualArts/Key</span>
+
+            <v-card href="https://key.visualarts.gr.jp/" color="rgba(242, 246, 92, 0.6)" class="px-1 py-1">
+              <span class="key-link">版権元：VISUAL ARTS/Key</span>
               </v-card>
 
           </v-col>
         </v-container>
-<v-btn @click="openWindow()" >神ボタン</v-btn>
+        <v-btn @click="openWindow()" >神ボタン</v-btn>
       </v-col>
     </v-row>
 
