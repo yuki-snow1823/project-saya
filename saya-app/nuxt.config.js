@@ -31,14 +31,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ["@/plugins/vue-typer"],
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    "@nuxtjs/vuetify",
-    "@nuxtjs/dotenv"
-  ],
+  buildModules: ["@nuxtjs/vuetify", "@nuxtjs/dotenv"],
   /*
    ** Nuxt.js modules
    */

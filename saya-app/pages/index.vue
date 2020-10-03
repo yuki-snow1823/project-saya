@@ -89,7 +89,7 @@
 
         <v-container>
           <v-col md="10">
-            <v-card href="https://twitter.com/yuki82511988" class="mb-2" color="rgba(86, 168, 165, 0.836)">
+            <v-card target="_blank" href="https://twitter.com/yuki82511988" class="mb-2" color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
                 <img class="twitter-icon" src="../assets/yuki.png" alt="">
               </v-list-item-avatar>
@@ -98,7 +98,7 @@
               </span>
             </v-card>
 
-            <v-card href="https://twitter.com/K_raris" class="mb-2" color="rgba(86, 168, 165, 0.836)">
+            <v-card target="_blank" href="https://twitter.com/K_raris" class="mb-2" color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
                 <img class="twitter-icon" src="../assets/kraris.png" alt="">
               </v-list-item-avatar>
@@ -107,7 +107,7 @@
               </span>
             </v-card>
 
-            <v-card href="https://twitter.com/momoringo_natan" class="mb-2" color="rgba(86, 168, 165, 0.836)">
+            <v-card target="_blank" href="https://twitter.com/momoringo_natan" class="mb-2" color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
                 <img class="twitter-icon" src="../assets/momoringo.png" alt="">
               </v-list-item-avatar>
@@ -122,9 +122,29 @@
 
           </v-col>
         </v-container>
-        <v-btn @click="openWindow()">神ボタン</v-btn>
+        <v-btn @click="openWindow()">スマホテストボタン</v-btn>
       </v-col>
     </v-row>
+
+<v-row>
+  <v-col md="2" sm="12">
+    <v-card class="py-2 px-2" color="#BBDEFB">
+      <vue-typer
+        :text='["うんがーーーーーー！","げげごぼおぇ…","戦場ではこういうのもアリなんだから…"]'
+        :repeat='Infinity'
+        :shuffle='true'
+        initial-action='typing'
+        :pre-type-delay='120'
+        :type-delay='130'
+        :pre-erase-delay='2000'
+        :erase-delay='330'
+        erase-style='clear'
+        :erase-on-complete='true'
+        caret-animation='smooth'
+      ></vue-typer>
+    </v-card>
+  </v-col>
+</v-row>
 
   </v-container>
 </template>
@@ -272,6 +292,10 @@
       margin-top: 40px;
       font-size: 30px;
     }
+  }
+
+  .vue-typer {
+    font-size: 18px;
   }
 
   .hashtag-title {
