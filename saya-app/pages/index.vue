@@ -165,8 +165,8 @@
         let vm = this;
         await axios.put("/v1/counter").then(response => {
           vm = response;
-          console.log(response.data.add.image);
-          this.countSayaBirthday = response.data.test.count;
+          console.log(response.data.tweet.image);
+          this.countSayaBirthday = response.data.count.count;
         })
       },
       openWindow() {
@@ -177,9 +177,9 @@
       let vm = this
       axios.get("/v1/counter").then(response => {
         vm = response;
-        this.countSayaBirthday = response.data.test.count;
-        this.messages = response.data.add;
-        // console.log(response.data.add);
+        this.countSayaBirthday = response.data.count.count;
+        this.messages = response.data.tweet;
+        // console.log(response.data.tweet);
       })
     },
     components: {},
