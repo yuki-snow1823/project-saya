@@ -34,15 +34,9 @@
           </v-list-item>
         </v-card>
 
-        <v-col class="count-btn-message d-flex mx-auto">
-          <v-card class="sub-message-card" elevation="10" color="#81D4FA" shaped outlined>
-            <v-list-item>
-              <v-list-item-content>
-                <p class="test py-5 my-1">みんなにお祝いされた回数：{{ countSayaBirthday }}回！！</p>
-              </v-list-item-content>
-            </v-list-item>
-
-          </v-card>
+        <v-col class="count-btn-message d-flex mx-auto example">
+          <img width="100%" src="../assets/label.png" alt="">
+          <p class="test py-5 my-1">{{ countSayaBirthday }}回<br>みんなにお祝いしてもらいました！</p>
         </v-col>
 
         <v-col class="d-flex">
@@ -89,7 +83,8 @@
 
         <v-container>
           <v-col md="10">
-            <v-card target="_blank" href="https://twitter.com/yuki82511988" class="mb-2" color="rgba(86, 168, 165, 0.836)">
+            <v-card target="_blank" href="https://twitter.com/yuki82511988" class="mb-2"
+              color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
                 <img class="twitter-icon" src="../assets/yuki.png" alt="">
               </v-list-item-avatar>
@@ -107,7 +102,8 @@
               </span>
             </v-card>
 
-            <v-card target="_blank" href="https://twitter.com/momoringo_natan" class="mb-2" color="rgba(86, 168, 165, 0.836)">
+            <v-card target="_blank" href="https://twitter.com/momoringo_natan" class="mb-2"
+              color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
                 <img class="twitter-icon" src="../assets/momoringo.png" alt="">
               </v-list-item-avatar>
@@ -126,25 +122,15 @@
       </v-col>
     </v-row>
 
-<v-row>
-  <v-col md="2" sm="12">
-    <v-card class="py-2 px-2" color="#BBDEFB">
-      <vue-typer
-        :text='["うんがーーーーーー！","げげごぼおぇ…","戦場ではこういうのもアリなんだから…"]'
-        :repeat='Infinity'
-        :shuffle='true'
-        initial-action='typing'
-        :pre-type-delay='120'
-        :type-delay='130'
-        :pre-erase-delay='2000'
-        :erase-delay='330'
-        erase-style='clear'
-        :erase-on-complete='true'
-        caret-animation='smooth'
-      ></vue-typer>
-    </v-card>
-  </v-col>
-</v-row>
+    <v-row>
+      <v-col md="12" sm="12">
+        <v-card class="py-2 px-2" color="#BBDEFB">
+          <vue-typer :text='["うんがーーーーーー！","げげごぼおぇ…","戦場ではこういうのもアリなんだから…"]' :repeat='Infinity' :shuffle='true'
+            initial-action='typing' :pre-type-delay='120' :type-delay='130' :pre-erase-delay='2000' :erase-delay='330'
+            erase-style='clear' :erase-on-complete='true' caret-animation='smooth'></vue-typer>
+        </v-card>
+      </v-col>
+    </v-row>
 
   </v-container>
 </template>
@@ -254,6 +240,13 @@
     }
   }
 
+  .example p {
+    position: absolute;/*絶対配置*/
+    font-size: 80%;
+    top: 20%;
+    left: 25%;
+  }
+
   .main-wrapper {
     margin-top: -40px;
   }
@@ -341,4 +334,7 @@
     color: rgb(68 90 203 / 87%);
   }
 
+  .example {/*親div*/
+    position: relative;/*相対配置*/
+  }
 </style>
