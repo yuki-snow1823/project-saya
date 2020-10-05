@@ -89,7 +89,10 @@
                 <img class="twitter-icon" src="../assets/yuki.png" alt="">
               </v-list-item-avatar>
               <span class="twitter-name">
-                programmer Yuki
+                programmer
+                <span class="twitter-name">
+                  Yuki
+                </span>
               </span>
             </v-card>
 
@@ -98,7 +101,10 @@
                 <img class="twitter-icon" src="../assets/kraris.png" alt="">
               </v-list-item-avatar>
               <span class="twitter-name">
-                Illustlator Kraris
+                Illustlator
+                <span class="twitter-name">
+                  Kraris
+                </span>
               </span>
             </v-card>
 
@@ -108,7 +114,10 @@
                 <img class="twitter-icon" src="../assets/momoringo.png" alt="">
               </v-list-item-avatar>
               <span class="twitter-name">
-                Designer ももりんご
+                Designer
+                <span class="twitter-name">
+                  ももりんご
+                </span>
               </span>
             </v-card>
 
@@ -124,7 +133,7 @@
 
     <v-row>
       <v-col md="12" sm="12">
-        <v-card class="py-2 px-2" color="#BBDEFB">
+        <v-card class="py-2 px-2 talk" color="#BBDEFB">
           <vue-typer :text='["うんがーーーーーー！","げげごぼおぇ…","戦場ではこういうのもアリなんだから…"]' :repeat='Infinity' :shuffle='true'
             initial-action='typing' :pre-type-delay='120' :type-delay='130' :pre-erase-delay='2000' :erase-delay='330'
             erase-style='clear' :erase-on-complete='true' caret-animation='smooth'></vue-typer>
@@ -241,7 +250,8 @@
   }
 
   .example p {
-    position: absolute;/*絶対配置*/
+    position: absolute;
+    /*絶対配置*/
     font-size: 80%;
     top: 20%;
     left: 25%;
@@ -334,7 +344,23 @@
     color: rgb(68 90 203 / 87%);
   }
 
-  .example {/*親div*/
-    position: relative;/*相対配置*/
+  .example {
+    /*親div*/
+    position: relative;
+    /*相対配置*/
   }
+
+  .talk {
+    border: rgba(252, 180, 204, 0.747) 6px solid !important;
+  }
+
+  a.mb-2.v-card.v-card--link.v-sheet.theme--light {
+    display: flex;
+    align-items: center;
+  }
+
+  span.twitter-name {
+    display: block;
+  }
+
 </style>
