@@ -21,7 +21,7 @@
           <v-list-item three-line>
             <v-list-item-content>
               <a href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click"
-                target="_blank" class="hashtag-title overline mb-4">#朱鷺戸沙耶生誕祭2020</a>
+                target="_blank" class="tweet-hashtag-title overline mb-4">#朱鷺戸沙耶生誕祭2020</a>
 
               <v-list-item-title class="headline mb-1">沙耶さん！<br>お誕生日おめでとう！</v-list-item-title>
               <v-list-item-subtitle class="my-3">
@@ -34,7 +34,7 @@
           </v-list-item>
         </v-card>
 
-        <v-col class="count-btn-message d-flex mx-auto example">
+        <v-col class="count-btn-message d-flex mx-auto">
           <img width="100%" src="../assets/label.png" alt="">
           <p class="test py-5 my-1">{{ countSayaBirthday }}回<br>みんなにお祝いしてもらいました！</p>
         </v-col>
@@ -46,7 +46,7 @@
         </v-col>
 
         <v-col class="d-flex" offset-md="8" sm="12">
-          <v-btn :disabled="btnFalse" class="main-btn" target="_blank" @click="count()" :href="madeUrl + value + mess"
+          <v-btn :disabled="btnFalse" class="tweet-btn" target="_blank" @click="count()" :href="madeUrl + value + mess"
             rounded color="#F48FB1" height="60">
             <v-icon class="mr-1" color="#EC407A">mdi-pistol</v-icon>
             <span class="btn-message">誕生日をお祝いする</span>
@@ -61,7 +61,6 @@
             href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click"
             class="tweet-logo-wrapper" color="rgba(158, 200, 255, 0.747)">
             <v-container class="pd-0" text-center>
-
               <img width="20%" src="../assets/Twitter_Logo_Blue.png" alt="">
             </v-container>
           </v-card>
@@ -69,7 +68,7 @@
           <v-container v-for="(message,index) of messages" :key="index">
             <v-card :href="message.tweet_link" target="_blank">
               <v-list-item-avatar tile size="50">
-                <img class="twitter-icon ml-3" :src="message.image" alt="">
+                <img class="tweet-icon ml-3" :src="message.image" alt="">
               </v-list-item-avatar>
               <span>{{ message.name }}</span>
               <v-list-item>
@@ -86,7 +85,7 @@
             <v-card target="_blank" href="https://twitter.com/yuki82511988" class="mb-2"
               color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="twitter-icon" src="../assets/yuki.png" alt="">
+                <img class="tweet-icon" src="../assets/yuki.png" alt="">
               </v-list-item-avatar>
               <span class="twitter-name">
                 programmer
@@ -98,7 +97,7 @@
 
             <v-card target="_blank" href="https://twitter.com/K_raris" class="mb-2" color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="twitter-icon" src="../assets/kraris.png" alt="">
+                <img class="tweet-icon" src="../assets/kraris.png" alt="">
               </v-list-item-avatar>
               <span class="twitter-name">
                 Illustlator
@@ -111,7 +110,7 @@
             <v-card target="_blank" href="https://twitter.com/momoringo_natan" class="mb-2"
               color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="twitter-icon" src="../assets/momoringo.png" alt="">
+                <img class="tweet-icon" src="../assets/momoringo.png" alt="">
               </v-list-item-avatar>
               <span class="twitter-name">
                 Designer
@@ -133,7 +132,7 @@
 
     <v-row>
       <v-col md="12" sm="12">
-        <v-card class="py-2 px-2 talk" color="#BBDEFB">
+        <v-card class="py-2 px-2 talk-wrapper" color="#BBDEFB">
           <vue-typer :text='["うんがーーーーーー！","げげごぼおぇ…","戦場ではこういうのもアリなんだから…"]' :repeat='Infinity' :shuffle='true'
             initial-action='typing' :pre-type-delay='120' :type-delay='130' :pre-erase-delay='2000' :erase-delay='330'
             erase-style='clear' :erase-on-complete='true' caret-animation='smooth'></vue-typer>
@@ -203,7 +202,6 @@
   $tab: 680px;
   $sp: 480px;
 
-  // レスポンシブデザイン用の指定
   @mixin pc {
     @media (max-width: ($pc)) {
       @content;
@@ -234,24 +232,14 @@
     }
   }
 
-  .date-img {
-    // z-index: 1;
-
-    @include sp {
-      width: 50%;
-      // height: 100px;
-    }
-  }
-
   .main-image {
     @include sp {
       width: 100%;
     }
   }
 
-  .example p {
+  .count-btn-message p {
     position: absolute;
-    /*絶対配置*/
     font-size: 80%;
     top: 20%;
     left: 25%;
@@ -266,7 +254,7 @@
     margin-top: -40px;
   }
 
-  .main-btn {
+  .tweet-btn {
     border: white solid 4px !important;
 
     @include sp {
@@ -301,14 +289,6 @@
     font-size: 18px;
   }
 
-  .hashtag-title {
-    text-decoration: none;
-  }
-
-  .twitter-icon {
-    margin-left: 1%;
-    margin-top: 1%;
-  }
 
   .sub-message-card {
     border: white solid 4px !important;
@@ -322,6 +302,7 @@
   .count-btn-message {
     padding: 30px;
     font-size: 30px;
+    position: relative;
   }
 
   .birthday-card {
@@ -332,6 +313,15 @@
     color: white;
   }
 
+  .tweet-hashtag-title {
+    text-decoration: none;
+  }
+
+  .tweet-icon {
+    margin-left: 1%;
+    margin-top: 1%;
+  }
+
   .tweet-wrapper {
     background: rgba(255, 255, 255, 0.692) !important;
   }
@@ -339,18 +329,16 @@
   .twitter-timeline {
     margin: 0 auto !important;
   }
+  
+  span.twitter-name {
+    display: block;
+  }
 
   .key-link {
     color: rgb(68 90 203 / 87%);
   }
 
-  .example {
-    /*親div*/
-    position: relative;
-    /*相対配置*/
-  }
-
-  .talk {
+  .talk-wrapper {
     border: rgba(252, 180, 204, 0.747) 6px solid !important;
   }
 
@@ -359,8 +347,5 @@
     align-items: center;
   }
 
-  span.twitter-name {
-    display: block;
-  }
 
 </style>
