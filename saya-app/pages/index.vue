@@ -11,9 +11,19 @@
 
     <v-row class="main-contents" cols="12">
       <v-col class="v-flex" sm="12" md="2" lg="4">
-        <v-hover v-slot:default="{ hover }" open-delay="200">
-          <img class="main-image animate__animated animate__pulse" width="100%" :src="hover ? a : b" alt="">
-        </v-hover>
+        <!-- <v-hover v-slot:default="{ hover }" open-delay="200"> -->
+        <!-- <img class="main-image animate__animated animate__pulse" width="100%" :src="hover ? a : b" alt=""> -->
+        
+        <img v-if="illustBool" class="main-image animate__animated animate__pulse" width="100%" src="../assets/tachie.png">
+        <img v-else class="main-image animate__animated animate__pulse" width="100%" src="../assets/chibi.png">
+        <!-- </v-hover> -->
+        <v-btn @click="changeIllust" rounded color="#00B8D4" x-large>
+          <span class="replay-btn">REPLAY?</span>
+        </v-btn>
+        <v-btn v-if="rikiBool" rounded color="#00B8D4" x-large>
+          <span class="replay-btn" @click="changeBtn">GAME END</span>
+        </v-btn>
+        <span v-else>諦める訳ないよ！！！！</span>
       </v-col>
 
       <v-col md="5" sm="12">
@@ -132,9 +142,9 @@
     <v-row>
       <v-col md="12" sm="12">
         <v-card class="py-2 px-2 talk-wrapper" color="#BBDEFB">
-          <vue-typer color="white" :text='["うんがーーーーーー！","げげごぼおぇ…","戦場ではこういうのもアリなんだから…"]' :repeat='Infinity' :shuffle='true'
-            initial-action='typing' :pre-type-delay='120' :type-delay='130' :pre-erase-delay='2000' :erase-delay='330'
-            erase-style='clear' :erase-on-complete='true' caret-animation='smooth'></vue-typer>
+          <vue-typer color="white" :text='["うんがーーーーーー！","げげごぼおぇ…","戦場ではこういうのもアリなんだから…"]' :repeat='Infinity'
+            :shuffle='true' initial-action='typing' :pre-type-delay='120' :type-delay='130' :pre-erase-delay='2000'
+            :erase-delay='330' erase-style='clear' :erase-on-complete='true' caret-animation='smooth'></vue-typer>
         </v-card>
       </v-col>
     </v-row>
@@ -156,6 +166,8 @@
         text: "",
         a: require('@/assets/chibi.png'),
         b: require('@/assets/tachie.png'),
+        illustBool: true,
+        rikiBool: true
       }
     },
     methods: {
@@ -169,6 +181,12 @@
       },
       openWindow() {
         window.open(this.madeUrl + this.value + this.mess, '', 'width=600,height=500,top=50,left=50');
+      },
+      changeIllust() {
+        this.illustBool = !this.illustBool;
+      },
+      changeBtn() {
+        this.rikiBool = !this.rikiBool;
       }
     },
     created() {
@@ -240,23 +258,25 @@
     font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", sans-serif;
   }
 
-    .birthday-main-message {
-      font-family: "makapop" !important;
-      font-size: 120%;
-    }
-    .v-application .headline {
-      font-family: "makapop" !important;
-      font-size: 120%;
-      @include sp {
-        font-size: 140% !important;
-      }
-    }
+  .birthday-main-message {
+    font-family: "makapop" !important;
+    font-size: 120%;
+  }
 
-    .birthday-message {
-      font-family: "makapop" !important;
-      font-size: 120%;
+  .v-application .headline {
+    font-family: "makapop" !important;
+    font-size: 120%;
 
+    @include sp {
+      font-size: 140% !important;
     }
+  }
+
+  .birthday-message {
+    font-family: "makapop" !important;
+    font-size: 120%;
+
+  }
 
   .main-image {
     @include sp {
@@ -269,12 +289,13 @@
     font-size: 80%;
     top: 20%;
     left: 25%;
-      @include sp {
-        position: absolute;
-        top: 15%;
-        left: 27%;
-        font-size: 50%;
-      }
+
+    @include sp {
+      position: absolute;
+      top: 15%;
+      left: 27%;
+      font-size: 50%;
+    }
   }
 
   .main-wrapper {
@@ -284,6 +305,11 @@
   .main-contents {
     margin-bottom: 40px;
     margin-top: -40px;
+  }
+
+  .replay-btn {
+    font-weight: bold;
+    color: white;
   }
 
   .tweet-btn {
@@ -381,8 +407,8 @@
     align-items: center;
   }
 
-.vue-typer .custom.char.typed {
-  color: #711836;
-}
+  .vue-typer .custom.char.typed {
+    color: #711836;
+  }
 
 </style>
