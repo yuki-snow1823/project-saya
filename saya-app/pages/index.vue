@@ -126,7 +126,6 @@
 
           </v-col>
         </v-container>
-        <v-btn @click="openWindow()">スマホテストボタン</v-btn>
       </v-col>
     </v-row>
 
