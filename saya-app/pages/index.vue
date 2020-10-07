@@ -132,7 +132,7 @@
     <v-row>
       <v-col md="12" sm="12">
         <v-card class="py-2 px-2 talk-wrapper" color="#BBDEFB">
-          <vue-typer :text='["うんがーーーーーー！","げげごぼおぇ…","戦場ではこういうのもアリなんだから…"]' :repeat='Infinity' :shuffle='true'
+          <vue-typer color="white" :text='["うんがーーーーーー！","げげごぼおぇ…","戦場ではこういうのもアリなんだから…"]' :repeat='Infinity' :shuffle='true'
             initial-action='typing' :pre-type-delay='120' :type-delay='130' :pre-erase-delay='2000' :erase-delay='330'
             erase-style='clear' :erase-on-complete='true' caret-animation='smooth'></vue-typer>
         </v-card>
@@ -248,7 +248,7 @@
       font-family: "makapop" !important;
       font-size: 120%;
       @include sp {
-        font-size: 120% !important;
+        font-size: 140% !important;
       }
     }
 
@@ -380,5 +380,9 @@
     display: flex;
     align-items: center;
   }
+
+.vue-typer .custom.char.typed {
+  color: #711836;
+}
 
 </style>
