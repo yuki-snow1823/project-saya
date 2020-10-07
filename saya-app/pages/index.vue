@@ -248,7 +248,7 @@
       font-family: "makapop" !important;
       font-size: 120%;
       @include sp {
-        font-size: 100% !important;
+        font-size: 120% !important;
       }
     }
 
