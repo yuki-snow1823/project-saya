@@ -17,13 +17,15 @@
         <img v-if="illustBool" class="main-image animate__animated animate__pulse" width="100%" src="../assets/tachie.png">
         <img v-else class="main-image animate__animated animate__pulse" width="100%" src="../assets/chibi.png">
         <!-- </v-hover> -->
-        <v-btn @click="changeIllust" rounded color="#00B8D4" x-large>
-          <span class="replay-btn">REPLAY?</span>
-        </v-btn>
-        <v-btn v-if="rikiBool" rounded color="#00B8D4" x-large>
-          <span class="replay-btn" @click="changeBtn">GAME END</span>
-        </v-btn>
-        <span v-else>諦める訳ないよ！！！！</span>
+        <v-col class="text-center">
+          <v-btn class="mr-10" @click="changeIllust" rounded color="#00B8D4" x-large>
+            <span class="replay-btn">REPLAY?</span>
+          </v-btn>
+          <v-btn v-if="rikiBool" rounded color="#00B8D4" x-large>
+            <span class="replay-btn" @click="changeBtn">GAME END</span>
+          </v-btn>
+          <span v-else>諦める訳ないよ！！！！</span>
+        </v-col>
       </v-col>
 
       <v-col md="5" sm="12">
