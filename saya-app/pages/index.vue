@@ -23,8 +23,8 @@
               <a href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click"
                 target="_blank" class="tweet-hashtag-title overline mb-4">#朱鷺戸沙耶生誕祭2020</a>
 
-              <v-list-item-title class="headline mb-1">沙耶さん！<br>お誕生日おめでとう！</v-list-item-title>
-              <v-list-item-subtitle class="my-3">
+              <v-list-item-title class="birthday-main-message headline mb-1">沙耶さん！<br>お誕生日おめでとう！</v-list-item-title>
+              <v-list-item-subtitle class="birthday-message my-3">
                 どうか幸せになってください！
               </v-list-item-subtitle>
             </v-list-item-content>
@@ -36,7 +36,7 @@
 
         <v-col class="count-btn-message d-flex mx-auto">
           <img width="100%" src="../assets/label.png" alt="">
-          <p class="test py-5 my-1">{{ countSayaBirthday }}回<br>みんなにお祝いしてもらいました！</p>
+          <p class="birthday-message py-5 my-1">{{ countSayaBirthday }}回<br>みんなにお祝いしてもらいました！</p>
         </v-col>
 
         <v-col class="d-flex">
@@ -197,6 +197,11 @@
 
 
 <style lang="scss">
+  @font-face {
+    font-family: "makapop";
+    src: url("../assets/fonts/851MkPOP_002.ttf") format("truetype");
+  }
+
   $pc: 2024px;
   $mid: 1024px;
   $tab: 680px;
@@ -231,6 +236,28 @@
       max-width: 100% !important;
     }
   }
+
+  * {
+    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", sans-serif;
+  }
+
+    .birthday-main-message {
+      font-family: "makapop" !important;
+      font-size: 120%;
+    }
+    .v-application .headline {
+      font-family: "makapop" !important;
+      font-size: 120%;
+    }
+
+    .birthday-message {
+      font-family: "makapop" !important;
+      font-size: 120%;
+      @include sp {
+        width: 70%;
+        font-size: 20%;
+      }
+    }
 
   .main-image {
     @include sp {
@@ -311,6 +338,8 @@
 
   .twitter-name {
     color: white;
+    font-family: "makapop" !important;
+    font-size: 120%;
   }
 
   .tweet-hashtag-title {
@@ -329,7 +358,7 @@
   .twitter-timeline {
     margin: 0 auto !important;
   }
-  
+
   span.twitter-name {
     display: block;
   }
@@ -346,6 +375,5 @@
     display: flex;
     align-items: center;
   }
-
 
 </style>
