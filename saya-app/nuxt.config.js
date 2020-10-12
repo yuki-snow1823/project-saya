@@ -8,15 +8,58 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: "沙耶ハピバapp",
+    title: "Saya's Birthday",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
-      }
+        content:
+          process.env.npm_package_description ||
+          "朱鷺戸沙耶のお誕生日を祝うアプリです。"
+      },
+      { hid: "description", name: "description", content: "サービスの説明" },
+      {
+        hid: "twitter:card",
+        name: "twitter:card",
+        content: "summary"
+      }, // 画像のタイプ。詳しくは後術。
+      { hid: "twitter:site", name: "twitter:site", content: "@magic18jpn" },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content:
+          "https://3.bp.blogspot.com/-3CtFNaO7nZQ/VaMNdpSHc8I/AAAAAAAAvYA/qFFLFrGkrjo/s800/girl_13.png"
+      }, // 苦労しました。詳しくは後術。
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: "blog"
+      },
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "Saya's Birthday"
+      },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://tokidosaya.com" // デプロイ済みであることが前提です。
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content:
+          "リトルバスターズ！EXの朱鷺戸沙耶の誕生日をお祝いするWebアプリです。ツイートされればされるほどお祝い回数が増えるので、是非使ってみてください。"
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content:
+          "https://3.bp.blogspot.com/-3CtFNaO7nZQ/VaMNdpSHc8I/AAAAAAAAvYA/qFFLFrGkrjo/s800/girl_13.png"
+      },
+      { hid: "og:site_name", name: "og:site_name", content: "Saya's Birthday" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
