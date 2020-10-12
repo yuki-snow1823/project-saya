@@ -14,7 +14,7 @@
         <!-- <v-hover v-slot:default="{ hover }" open-delay="200"> -->
         <!-- <img class="main-image animate__animated animate__pulse" width="100%" :src="hover ? a : b" alt=""> -->
         
-        <img v-if="illustBool" class="main-image animate__animated animate__pulse" width="100%" src="../assets/tachie.png">
+        <img v-if="illustBool" class="main-image animate__animated animate__pulse" width="100%" src="../assets/tachiefix2.png">
         <img v-else class="main-image animate__animated animate__pulse" width="100%" src="../assets/chibi.png">
         <!-- </v-hover> -->
         <v-col class="text-center">
@@ -52,13 +52,13 @@
         </v-col>
 
         <v-col class="d-flex">
-          <v-textarea counter="120" v-model="value" background-color="amber lighten-4" color="orange orange-darken-5"
+          <v-textarea counter="100" v-model="value" background-color="amber lighten-4" color="orange orange-darken-5"
             label="お祝いメッセージを入力する">
           </v-textarea>
         </v-col>
 
         <v-col class="d-flex" offset-md="8" sm="12">
-          <v-btn :disabled="btnFalse" class="tweet-btn" target="_blank" @click="count()" :href="madeUrl + value + mess"
+          <v-btn :disabled="btnFalse" class="tweet-btn" target="_blank" @click="count()" :href="madeUrl + value + mess + ' ' + 'https://tokidosaya.com'"
             rounded color="#F48FB1" height="60">
             <v-icon class="mr-1" color="#EC407A">mdi-pistol</v-icon>
             <span class="btn-message">誕生日をお祝いする</span>
@@ -167,7 +167,7 @@
         messages: [],
         text: "",
         a: require('@/assets/chibi.png'),
-        b: require('@/assets/tachie.png'),
+        b: require('@/assets/tachiefix1.png'),
         illustBool: true,
         rikiBool: true
       }
@@ -197,13 +197,22 @@
         vm = response;
         this.countSayaBirthday = response.data.count.count;
         this.messages = response.data.tweet;
-        // console.log(response.data.tweet);
+        // tweet画像のhttps化
+        response.data.tweet.forEach(
+          (element) => {
+            console.log(element.image)
+            const str = element.image
+            const replaced = str.replace('http', 'https');
+            element.image = replaced;
+            }
+          );
+          // console.log(response.data.tweet);
       })
     },
     components: {},
     computed: {
       btnFalse: function () {
-        if (this.value.length > 120) {
+        if (this.value.length > 100) {
           return true
         } else {
           return false
