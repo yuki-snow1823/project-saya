@@ -29,8 +29,7 @@ export default {
       {
         hid: "twitter:image",
         name: "twitter:image",
-        content:
-          "https://3.bp.blogspot.com/-3CtFNaO7nZQ/VaMNdpSHc8I/AAAAAAAAvYA/qFFLFrGkrjo/s800/girl_13.png"
+        content: "https://tokidosaya.com/_nuxt/img/tweetimg.5bf08a7.png"
       }, // 苦労しました。詳しくは後術。
       {
         hid: "og:type",
@@ -56,8 +55,7 @@ export default {
       {
         hid: "og:image",
         property: "og:image",
-        content:
-          "https://3.bp.blogspot.com/-3CtFNaO7nZQ/VaMNdpSHc8I/AAAAAAAAvYA/qFFLFrGkrjo/s800/girl_13.png"
+        content: "https://tokidosaya.com/_nuxt/img/tweetimg.5bf08a7.png"
       },
       { hid: "og:site_name", name: "og:site_name", content: "Saya's Birthday" }
     ],

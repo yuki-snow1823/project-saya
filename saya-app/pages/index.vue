@@ -41,14 +41,14 @@
               </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-avatar tile size="150">
-              <img src="../assets/sayaface.png" alt="">
+              <img src="../assets/tweetimg.png" alt="">
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
 
         <v-col class="count-btn-message d-flex mx-auto">
           <img width="100%" src="../assets/label.png" alt="">
-          <p class="birthday-message py-5 my-1">{{ countSayaBirthday }}回<br>みんなにお祝いしてもらいました！</p>
+          <p class="birthday-message py-5 mb-3">{{ countSayaBirthday }}回<br>みんなにお祝いしてもらいました！</p>
         </v-col>
 
         <v-col class="d-flex">
@@ -267,6 +267,10 @@
 
   * {
     font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", sans-serif;
+  }
+
+  .row {
+    margin: auto 0 !important;
   }
 
   .birthday-main-message {
