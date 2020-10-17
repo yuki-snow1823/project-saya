@@ -1,29 +1,23 @@
 <template>
   <v-app class="bg">
-    <nuxt />
-    <v-card>
-      <v-footer class="py-3" color="light-blue lighten-1" padless>
-        <v-row justify="center" no-gutters>
-          <!-- <v-btn v-for="link in links" :key="link.name" color="white" text rounded class="my-2">
-            <a class="link" :href="link['rel']" target="_blank">{{ link["name"] }}</a>
-          </v-btn> -->
-          <v-col class="light-blue lighten-1 text-center white--text" cols="12">
-            {{ new Date().getFullYear() }} — <strong>Created by Yuki Horikoshi</strong>
-          </v-col>
-        </v-row>
-      </v-footer>
-    </v-card>
     <Loading v-if="show"></Loading>
+    <Header></Header>
+    <nuxt />
+    <Footer></Footer>
   </v-app>
 
 </template>
 
 <script>
-  import Loading from "@/components/Loading"; //追加
+  import Loading from "@/components/Loading"; // 追加
+  import Header from "@/components/common/Header"; // 画像は全てのページで出て欲しいため。
+  import Footer from "@/components/common/Footer";
 
   export default {
     components: {
-      Loading
+      Loading,
+      Header,
+      Footer,
     },
     data() {
       return {
