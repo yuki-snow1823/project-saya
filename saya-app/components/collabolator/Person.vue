@@ -1,12 +1,12 @@
 <template>
-  <v-card target="_blank" href="https://twitter.com/yuki82511988" class="mb-2" color="rgba(86, 168, 165, 0.836)">
+  <v-card target="_blank" :href="personData.twitter" class="mb-2" color="rgba(86, 168, 165, 0.836)">
     <v-list-item-avatar tile size="80">
-      <img class="tweet-icon" src="../../assets/yuki.png" alt="" />
+      <img class="tweet-icon" :src="personData.avatar" alt="" />
     </v-list-item-avatar>
     <span class="twitter-name">
-      programmer
+      {{ personData.position }}
       <span class="twitter-name">
-        Yuki
+        {{ personData.name }}
       </span>
     </span>
   </v-card>
@@ -14,9 +14,11 @@
 
 <script>
 export default {
-  name: "Person",
   data () {
     return {}
-  }
+  },
+
+  props: ['personData'], // index.vueで送ろうとしているデータが入る、その名前で登録されている
+
 }
 </script>
