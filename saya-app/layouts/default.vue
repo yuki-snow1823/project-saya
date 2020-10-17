@@ -45,21 +45,16 @@
         }]
       }
     },
-    created() {
-              setTimeout(() => {
+    mounted() {
+      this.stopLoading();
+    },
+    methods: {
+      stopLoading() {
+        setTimeout(() => {
           this.show = false
         }, 3000)
-    },
-    // methods: {
-    //         showFlash(){
-    //     this.show = true;
-    //   // setTimeoutで3000ms後にshowをfalseにする
-    //     setTimeout(() => {
-    //       this.show = false}
-    //       ,3000
-    //     )
-    //   }
-    // }
+      }
+    }
   }
 
 </script>
