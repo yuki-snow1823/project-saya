@@ -1,30 +1,20 @@
 <template>
   <v-container class="main-wrapper">
 
-    <v-row>
-      <v-col cols="12" xs="12" sm="12" offset-md="1" md="10">
-        <v-container text-center>
-          <img class="my-10" width="100%" height="100%" src="../assets/title.png" alt="">
-        </v-container>
-      </v-col>
-    </v-row>
-
     <v-row class="main-contents" cols="12">
       <v-col class="v-flex" sm="12" md="2" lg="4">
-        <!-- <v-hover v-slot:default="{ hover }" open-delay="200"> -->
-        <!-- <img class="main-image animate__animated animate__pulse" width="100%" :src="hover ? a : b" alt=""> -->
-        
-        <img v-if="illustBool" class="main-image animate__animated animate__pulse" width="100%" src="../assets/tachiefix2.png">
-        <img v-else class="main-image animate__animated animate__pulse" width="100%" src="../assets/chibi.png">
-        <!-- </v-hover> -->
+        <img v-if="illustBool" class="main-image animate__animated animate__pulse" width="100%"
+          src="../assets/tachiefix2.png" />
+        <img v-else class="main-image animate__animated animate__pulse" width="100%" src="../assets/tachie2.png" />
         <v-col class="text-center">
-          <v-btn class="mr-10" @click="changeIllust" rounded color="#00B8D4" x-large>
+          <v-btn @click="changeIllust" rounded color="#00B8D4" x-large>
             <span class="replay-btn">REPLAY?</span>
           </v-btn>
-          <v-btn v-if="rikiBool" rounded color="#00B8D4" x-large>
+
+          <v-btn class="ml-3" v-if="rikiBool" rounded color="#00B8D4" x-large>
             <span class="replay-btn" @click="changeBtn">GAME END</span>
           </v-btn>
-          <span v-else>諦める訳ないよ！！！！</span>
+          <span class="riki-text" v-else>諦める訳ないよ！！</span>
         </v-col>
       </v-col>
 
@@ -35,20 +25,22 @@
               <a href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click"
                 target="_blank" class="tweet-hashtag-title overline mb-4">#朱鷺戸沙耶生誕祭2020</a>
 
-              <v-list-item-title class="birthday-main-message headline mb-1">沙耶さん！<br>お誕生日おめでとう！</v-list-item-title>
+              <v-list-item-title class="birthday-main-message headline mb-1">沙耶さん！<br />お誕生日おめでとう！</v-list-item-title>
               <v-list-item-subtitle class="birthday-message my-3">
                 どうか幸せになってください！
               </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-avatar tile size="150">
-              <img src="../assets/tweetimg.png" alt="">
+              <img class="tweet-img-mini" src="../assets/tweetimg.png" alt="" />
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
 
         <v-col class="count-btn-message d-flex mx-auto">
-          <img width="100%" src="../assets/label.png" alt="">
-          <p class="birthday-message py-5 mb-3">{{ countSayaBirthday }}回<br>みんなにお祝いしてもらいました！</p>
+          <img width="100%" src="../assets/label.png" alt="" />
+          <p class="birthday-message py-5 mb-3">
+            {{ countSayaBirthday }}回<br />みんなにお祝いしてもらいました！
+          </p>
         </v-col>
 
         <v-col class="d-flex">
@@ -58,14 +50,13 @@
         </v-col>
 
         <v-col class="d-flex" offset-md="8" sm="12">
-          <v-btn :disabled="btnFalse" class="tweet-btn" target="_blank" @click="count()" :href="madeUrl + value + mess + ' ' + 'https://tokidosaya.com'"
-            rounded color="#F48FB1" height="60">
+          <v-btn :disabled="btnFalse" class="tweet-btn" target="_blank" @click="count()"
+            :href="madeUrl + value + mess + ' ' + 'https://tokidosaya.com'" rounded color="#F48FB1" height="60">
             <v-icon class="mr-1" color="#EC407A">mdi-pistol</v-icon>
             <span class="btn-message">誕生日をお祝いする</span>
           </v-btn>
         </v-col>
       </v-col>
-
 
       <v-col md="3">
         <v-card class="tweet-wrapper">
@@ -73,14 +64,14 @@
             href="https://twitter.com/search?q=%23%E6%9C%B1%E9%B7%BA%E6%88%B8%E6%B2%99%E8%80%B6%E7%94%9F%E8%AA%95%E7%A5%AD2020&src=recent_search_click"
             class="tweet-logo-wrapper" color="rgba(158, 200, 255, 0.747)">
             <v-container class="pd-0" text-center>
-              <img width="20%" src="../assets/Twitter_Logo_Blue.png" alt="">
+              <img width="20%" src="../assets/Twitter_Logo_Blue.png" alt="" />
             </v-container>
           </v-card>
 
-          <v-container v-for="(message,index) of messages" :key="index">
+          <v-container v-for="(message, index) of messages" :key="index">
             <v-card :href="message.tweet_link" target="_blank">
               <v-list-item-avatar tile size="50">
-                <img class="tweet-icon ml-3" :src="message.image" alt="">
+                <img class="tweet-icon ml-3" :src="message.image" alt="" />
               </v-list-item-avatar>
               <span>{{ message.name }}</span>
               <v-list-item>
@@ -97,7 +88,7 @@
             <v-card target="_blank" href="https://twitter.com/yuki82511988" class="mb-2"
               color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="tweet-icon" src="../assets/yuki.png" alt="">
+                <img class="tweet-icon" src="../assets/yuki.png" alt="" />
               </v-list-item-avatar>
               <span class="twitter-name">
                 programmer
@@ -109,7 +100,7 @@
 
             <v-card target="_blank" href="https://twitter.com/K_raris" class="mb-2" color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="tweet-icon" src="../assets/kraris.png" alt="">
+                <img class="tweet-icon" src="../assets/kraris.png" alt="" />
               </v-list-item-avatar>
               <span class="twitter-name">
                 Illustlator
@@ -122,7 +113,7 @@
             <v-card target="_blank" href="https://twitter.com/momoringo_natan" class="mb-2"
               color="rgba(86, 168, 165, 0.836)">
               <v-list-item-avatar tile size="80">
-                <img class="tweet-icon" src="../assets/momoringo.png" alt="">
+                <img class="tweet-icon" src="../assets/momoringo.png" alt="" />
               </v-list-item-avatar>
               <span class="twitter-name">
                 Designer
@@ -135,7 +126,6 @@
             <v-card href="https://key.visualarts.gr.jp/" color="rgba(242, 246, 92, 0.6)" class="px-1 py-1">
               <span class="key-link">版権元：VISUAL ARTS/Key</span>
             </v-card>
-
           </v-col>
         </v-container>
       </v-col>
@@ -144,18 +134,22 @@
     <v-row>
       <v-col md="12" sm="12">
         <v-card class="py-2 px-2 talk-wrapper" color="#BBDEFB">
-          <vue-typer color="white" :text='["うんがーーーーーー！","げげごぼおぇ…","戦場ではこういうのもアリなんだから…"]' :repeat='Infinity'
-            :shuffle='true' initial-action='typing' :pre-type-delay='120' :type-delay='130' :pre-erase-delay='2000'
-            :erase-delay='330' erase-style='clear' :erase-on-complete='true' caret-animation='smooth'></vue-typer>
+          <vue-typer color="white" :text="[
+              'うんがーーーーーー！',
+              'げげごぼおぇ…',
+              '戦場ではこういうのもアリなんだから…'
+            ]" :repeat="Infinity" :shuffle="true" initial-action="typing" :pre-type-delay="120" :type-delay="130"
+            :pre-erase-delay="2000" :erase-delay="330" erase-style="clear" :erase-on-complete="true"
+            caret-animation="smooth"></vue-typer>
         </v-card>
       </v-col>
     </v-row>
-
   </v-container>
 </template>
 
 <script>
-  import axios from "@/plugins/axios"
+  import axios from "@/plugins/axios";
+
 
   export default {
     data() {
@@ -166,23 +160,26 @@
         madeUrl: "https://twitter.com/intent/tweet?text=",
         messages: [],
         text: "",
-        a: require('@/assets/chibi.png'),
-        b: require('@/assets/tachiefix1.png'),
+        a: require("@/assets/chibi.png"),
+        b: require("@/assets/tachiefix1.png"),
         illustBool: true,
         rikiBool: true
-      }
+      };
     },
     methods: {
       async count() {
         let vm = this;
         await axios.put("/v1/counter").then(response => {
           vm = response;
-          console.log(response.data.tweet.image);
           this.countSayaBirthday = response.data.count.count;
-        })
+        });
       },
       openWindow() {
-        window.open(this.madeUrl + this.value + this.mess, '', 'width=600,height=500,top=50,left=50');
+        window.open(
+          this.madeUrl + this.value + this.mess,
+          "",
+          "width=600,height=500,top=50,left=50"
+        );
       },
       changeIllust() {
         this.illustBool = !this.illustBool;
@@ -192,39 +189,27 @@
       }
     },
     created() {
-      let vm = this
+      let vm = this;
       axios.get("/v1/counter").then(response => {
-        vm = response;
         this.countSayaBirthday = response.data.count.count;
         this.messages = response.data.tweet;
-        // tweet画像のhttps化
-        response.data.tweet.forEach(
-          (element) => {
-            console.log(element.image)
-            const str = element.image
-            const replaced = str.replace('http', 'https');
-            element.image = replaced;
-            }
-          );
-          // console.log(response.data.tweet);
-      })
+      });
     },
     components: {},
     computed: {
       btnFalse: function () {
         if (this.value.length > 100) {
-          return true
+          return true;
         } else {
-          return false
+          return false;
         }
       }
     }
-  }
+  };
 
 </script>
 
-
-<style lang="scss">
+<style lang="scss" scoped>
   @font-face {
     font-family: "makapop";
     src: url("../assets/fonts/851MkPOP_002.ttf") format("truetype");
@@ -266,7 +251,8 @@
   }
 
   * {
-    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", sans-serif;
+    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ",
+      "Meiryo", sans-serif;
   }
 
   .row {
@@ -287,10 +273,15 @@
     }
   }
 
+  .riki-text {
+    @include sp {
+      font-size: 70%;
+    }
+  }
+
   .birthday-message {
     font-family: "makapop" !important;
     font-size: 120%;
-
   }
 
   .main-image {
@@ -325,6 +316,10 @@
   .replay-btn {
     font-weight: bold;
     color: white;
+
+    @include sp {
+      font-size: 70% !important;
+    }
   }
 
   .tweet-btn {
@@ -344,7 +339,6 @@
       margin: auto !important;
       width: 100% !important;
     }
-
   }
 
   .top-message {
@@ -361,7 +355,6 @@
   .vue-typer {
     font-size: 18px;
   }
-
 
   .sub-message-card {
     border: white solid 4px !important;
