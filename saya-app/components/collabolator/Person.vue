@@ -29,4 +29,8 @@ export default {
   font-family: "makapop" !important;
   font-size: 120%;
 }
+
+span.twitter-name {
+  display: block;
+}
 </style>
