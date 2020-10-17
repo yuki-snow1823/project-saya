@@ -8,7 +8,7 @@ class V1::CountersController < ApplicationController
     @counter = Counter.find(1)
     @data = client.search("#朱鷺戸沙耶生誕祭2020", result_type: "recent").take(4).collect do |tweet|
       {
-        "image": "#{tweet.user.profile_image_url.to_s.gsub('http', 'https')}",
+        "image": "#{tweet.user.profile_image_url.to_s.sub('http', 'https')}",
         "name": "#{tweet.user.name}",
         "text": "#{tweet.full_text}",
         "tweet_link": "#{tweet.uri}"
