@@ -22,3 +22,11 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+.twitter-name {
+  color: white;
+  font-family: "makapop" !important;
+  font-size: 120%;
+}
+</style>

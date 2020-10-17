@@ -4,6 +4,8 @@
     <Header></Header>
     <nuxt />
     <Footer></Footer>
+
+    <Person></Person>
   </v-app>
 
 </template>
@@ -21,19 +23,6 @@
     },
     data() {
       return {
-        links: [{
-            name: "製作者",
-            rel: "https://twitter.com/magic18jpn"
-          },
-          {
-            name: "デザイナー",
-            rel: "https://twitter.com/K_raris"
-          },
-          {
-            name: "版権元",
-            rel: "https://key.visualarts.gr.jp/"
-          }
-        ],
         show: true
       }
     },
@@ -64,21 +53,18 @@
     margin: 0;
   }
 
+  v-app {
+    background-size: 100%;
+  }
+
   .bg {
     background-image: url("~@/assets/background.png") !important;
-    // width: 100% !important;
-    background-size: 100% !important; // いい感じになる
-    // background-position: center !important;
-    // background-repeat: no-repeat !important;
-    // スマホのサイズで画像の真ん中を参照するように変更したい（サイズそのまま）
+    background-size: 100% !important;
   }
 
   .link {
     color: white !important;
   }
 
-  v-app {
-    background-size: 100%;
-  }
 
 </style>
